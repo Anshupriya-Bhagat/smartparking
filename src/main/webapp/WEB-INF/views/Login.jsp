@@ -4,9 +4,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Login</title>
 </head>
 <body>
   <h2>Login</h2>
+  <form>
+   Email:<input type="text" name="email"><br><br>
+   Password:<input type="text" name="password"><br><br>
+   <input type="submit" value="Login">
+   <a href="forgotpassword">Forgot Password?</a>
+  </form>
+  <br>
+  <a href="signup">SignUp</a>
 </body>
 </html>
