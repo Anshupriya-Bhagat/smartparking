@@ -9,11 +9,13 @@
 <body>
   <h2>SignUp</h2>
   <form action="saveuser" method="post">
-    FirstName:<input type="text" name="firstname"><br><br>
-    LastName:<input type="text" name="lastname"><br><br>
+    FirstName:<input type="text" name="firstName"><br><br>
+    LastName:<input type="text" name="lastName"><br><br>
     Email:<input type="text" name="email"><br><br>
+    Gender:Male<input type="radio"  name="gender" value="male">
+           Female<input type="radio" name="gender" value="female"><br><br>
     Password:<input type="password" name="password"><br><br>
-    Contact Number:<input type="tel" name="contactno"><br><br>
+    Contact Number:<input type="tel" name="contactnum"><br><br>
     <input type="submit" value="signup">
   </form>
   <a href="login">Login</a>
