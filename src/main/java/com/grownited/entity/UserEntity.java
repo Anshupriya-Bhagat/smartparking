@@ -17,7 +17,7 @@ public class UserEntity {
 	private String email;
 	private String password;
 	private String gender;
-	private String contactnum;
+	private Integer contactnum;
 	public Integer getUserid() {
 		return userid;
 	}
@@ -54,12 +54,13 @@ public class UserEntity {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public String getContactNum() {
+	public Integer getContactnum() {
 		return contactnum;
 	}
-	public void setContactNum(String contactNum) {
-		this.contactnum = contactNum;
+	public void setContactnum(Integer contactnum) {
+		this.contactnum = contactnum;
 	}
+	
 	
 	
 }
