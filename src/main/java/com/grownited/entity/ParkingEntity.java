@@ -18,10 +18,12 @@ public class ParkingEntity {
 	private Integer ownerId;
 	private Integer totalCapacityTwoWheeler;
 	private Integer totalCapacityFourWheeler;
-	private Integer otherInformation;
-	private Integer active;
+	private String otherInformation;
+	private String active;
 	private Integer hourlyChargeForTwoWheeler;
 	private Integer hourlyChargeForFourWheeler;
+	private Float longitude;
+	private Float latitude;
 	private String parkingType;
 	public Integer getParkingId() {
 		return parkingId;
@@ -65,18 +67,21 @@ public class ParkingEntity {
 	public void setTotalCapacityFourWheeler(Integer totalCapacityFourWheeler) {
 		this.totalCapacityFourWheeler = totalCapacityFourWheeler;
 	}
-	public Integer getOtherInformation() {
+	public String getOtherInformation() {
 		return otherInformation;
 	}
-	public void setOtherInformation(Integer otherInformation) {
+	public void setOtherInformation(String otherInformation) {
 		this.otherInformation = otherInformation;
 	}
-	public Integer getActive() {
+	
+	public String getActive() {
 		return active;
 	}
-	public void setActive(Integer active) {
+	public void setActive(String active) {
 		this.active = active;
 	}
+	
+	
 	public Integer getHourlyChargeForTwoWheeler() {
 		return hourlyChargeForTwoWheeler;
 	}
@@ -88,6 +93,18 @@ public class ParkingEntity {
 	}
 	public void setHourlyChargeForFourWheeler(Integer hourlyChargeForFourWheeler) {
 		this.hourlyChargeForFourWheeler = hourlyChargeForFourWheeler;
+	}
+	public Float getLongitude() {
+		return longitude;
+	}
+	public void setLongitude(Float longitude) {
+		this.longitude = longitude;
+	}
+	public Float getLatitude() {
+		return latitude;
+	}
+	public void setLatitude(Float latitude) {
+		this.latitude = latitude;
 	}
 	public String getParkingType() {
 		return parkingType;

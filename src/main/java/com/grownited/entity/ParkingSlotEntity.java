@@ -13,31 +13,32 @@ import jakarta.persistence.Table;
 public class ParkingSlotEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer parkingsslotId;
+	private Integer parkingSlotId;
 	private Long parkingId;
-	private Integer floor;
+	private String floor;
 	private Integer parkingTag;
-	private Boolean active;
+	private String active;
 	private Integer minimumParkingMinutes;
 	private String suvSupported;
-	public Integer getParkingsslotId() {
-		return parkingsslotId;
-	}
-	public void setParkingsslotId(Integer parkingsslotId) {
-		this.parkingsslotId = parkingsslotId;
-	}
 	
 	
+	
+	public Integer getParkingSlotId() {
+		return parkingSlotId;
+	}
+	public void setParkingSlotId(Integer parkingSlotId) {
+		this.parkingSlotId = parkingSlotId;
+	}
 	public Long getParkingId() {
 		return parkingId;
 	}
 	public void setParkingId(Long parkingId) {
 		this.parkingId = parkingId;
 	}
-	public Integer getFloor() {
+	public String getFloor() {
 		return floor;
 	}
-	public void setFloor(Integer floor) {
+	public void setFloor(String floor) {
 		this.floor = floor;
 	}
 	public Integer getParkingTag() {
@@ -46,10 +47,11 @@ public class ParkingSlotEntity {
 	public void setParkingTag(Integer parkingTag) {
 		this.parkingTag = parkingTag;
 	}
-	public Boolean getActive() {
+	
+	public String getActive() {
 		return active;
 	}
-	public void setActive(Boolean active) {
+	public void setActive(String active) {
 		this.active = active;
 	}
 	public Integer getMinimumParkingMinutes() {

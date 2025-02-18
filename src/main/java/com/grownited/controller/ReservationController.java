@@ -1,9 +1,15 @@
 package com.grownited.controller;
 
+
+
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
 
 import com.grownited.entity.ReservationEntity;
 import com.grownited.repository.ReservationRepository;
@@ -25,6 +31,13 @@ public class ReservationController {
 		System.out.println(reservation.getSecurityAmountPaid());
 		reporeservation.save(reservation);
 		return ("Reservation");
+	}
+	
+	@GetMapping("listreservation")
+	public String listreservation(Model model) {
+		List<ReservationEntity> reservationList = reporeservation.findAll();	
+		model.addAttribute("reservationList", reservationList);
+		return ("ListReservation");
 	}
 
 }

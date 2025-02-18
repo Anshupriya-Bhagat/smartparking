@@ -8,14 +8,14 @@
 </head>
 <body>
      <form action="saveparking" method="post">
-     Title<input type="text" name="title">
-     Address<input type="text" name="address">
-     TotalcapacitytwoWheeler<input type="text" name="totalCapacityTwoWheeler">
-     TotalcapacityfourWheeler<input type="text" name="totalCapacityFourWheeler">
-     OtherInformation<input type="text" name="otherInformation">
-     HourlychargefortwoWheeler<input type="text" name=" hourlyChargeForTwoWheeler">
-     HourlychargeforfourWheeler<input type="text" name="hourlyChargeForFourWheeler">
-     ParkingType<input type="text" name="parkingType">
+     Title<input type="text" name="title"><br><br>
+     Address<input type="text" name="address"><br><br>
+     TotalcapacitytwoWheeler<input type="text" name="totalCapacityTwoWheeler"><br><br>
+     TotalcapacityfourWheeler<input type="text" name="totalCapacityFourWheeler"><br><br>
+     OtherInformation<input type="text" name="otherInformation"><br><br>
+     Latitude<input type="text" name="latitude"><br><br>
+     Longitude<input type="text" name="longitude"><br><br>
+     ParkingType<input type="text" name="parkingType"><br><br>
      <input type="submit" value="saveparking">
      
      </form>

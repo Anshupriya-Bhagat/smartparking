@@ -1,7 +1,10 @@
 package com.grownited.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -25,9 +28,16 @@ public class ParkingSlotController {
 		System.out.println(parkingslot.getSuvSupported());
 		System.out.println(parkingslot.getMinimumParkingMinutes());
 		System.out.println(parkingslot.getParkingTag());
-		parkingslot.setActive(true);
 		repoparkingslot.save(parkingslot);
+		
 		return("ParkingSlot");
+	}
+	
+	@GetMapping("listparkingslot")
+	public String listparkingslot(Model model) {
+		List<ParkingSlotEntity> parkingslotList = repoparkingslot.findAll();
+		model.addAttribute("parkingslotList", parkingslotList);
+		return("ListParkingSlot");
 	}
 
 }

@@ -8,9 +8,12 @@
 </head>
 <body>
      <form action="savereservation" method="post">
-     AmountPaid<input type="text" name="amountPaid">
-     SecurityAmountPaid<input type="text" name="securityAmountPaid">
-     <input type="submit" name="saveregistraion">
+     Date<input type="date" name="date"><br><br>
+     StartTime<input type="datetime-local" name="startTime"><br><br>
+     EndTime<input type="datetime-local" name="endTime"><br><br>
+     AmountPaid<input type="text" name="amountPaid"><br><br>
+     SecurityAmountPaid<input type="text" name="securityAmountPaid"><br><br>
+     <input type="submit" name="saverreservation">
      </form>
 
 </body>

@@ -14,7 +14,7 @@ public class VehicleEntity {
 	private Integer vehicleId;
 	private Integer userId;
 	private Integer registrationNum;
-	private String vehicletype;
+	private String vehicleType;
 	public Integer getVehicleId() {
 		return vehicleId;
 	}
@@ -33,12 +33,13 @@ public class VehicleEntity {
 	public void setRegistrationNum(Integer registrationNum) {
 		this.registrationNum = registrationNum;
 	}
-	public String getVehicletype() {
-		return vehicletype;
+	public String getVehicleType() {
+		return vehicleType;
 	}
-	public void setVehicletype(String vehicletype) {
-		this.vehicletype = vehicletype;
+	public void setVehicleType(String vehicleType) {
+		this.vehicleType = vehicleType;
 	}
+	
 
 	
 }

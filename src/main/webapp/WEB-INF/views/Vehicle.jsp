@@ -8,8 +8,8 @@
 </head>
 <body>
       <form action="savevehicle" method="post">
-      Registration Number<input type=text name="registrationNum">
-      Vehicle Type<input type=text name="vehicletype">
+      Registration Number<input type=text name="registrationNum"><br><br>
+      Vehicle Type<input type=text name="vehicleType"><br><br>
       <input type="submit" value="savevehicle">
       </form>
 </body>

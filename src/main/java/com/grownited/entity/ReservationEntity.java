@@ -1,5 +1,9 @@
 package com.grownited.entity;
 
+
+import java.sql.Date;
+
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -17,6 +21,9 @@ public class ReservationEntity {
 	private Integer parkingSlotId;
 	private Integer parkingId;
 	private Integer vehicleId;
+	private Date date;
+	private String startTime;
+	private String endTime;
 	private String paymentStatus;
 	private Integer amountPaid;
 	private Integer securityAmountPaid;
@@ -50,6 +57,27 @@ public class ReservationEntity {
 	}
 	public void setVehicleId(Integer vehicleId) {
 		this.vehicleId = vehicleId;
+	}
+	
+	
+
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public String getStartTime() {
+		return startTime;
+	}
+	public void setStartTime(String startTime) {
+		this.startTime = startTime;
+	}
+	public String getEndTime() {
+		return endTime;
+	}
+	public void setEndTime(String endTime) {
+		this.endTime = endTime;
 	}
 	public String getPaymentStatus() {
 		return paymentStatus;
