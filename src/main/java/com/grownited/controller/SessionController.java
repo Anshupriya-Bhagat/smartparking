@@ -3,6 +3,7 @@ package com.grownited.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +24,11 @@ public class SessionController {
 	@Autowired
 	MailService serviceMail;
 	
+	
+	@Autowired
+	PasswordEncoder encoder;
+	
+	
 	@GetMapping(value={"/","signup"})
 	public String signup() {
 		return("Signup");
@@ -38,8 +44,12 @@ public class SessionController {
 	
 	@PostMapping("saveuser")
 	public String saveuser(UserEntity userEntity) {
-		repouser.save(userEntity);
+		
 		serviceMail.sendWelcomeMail(userEntity.getEmail(), userEntity.getFirstName());
+		
+		String encPassword = encoder.encode(userEntity.getPassword());
+		userEntity.setPassword(encPassword);
+		repouser.save(userEntity);
 		return ("Login");
 	}
 	
