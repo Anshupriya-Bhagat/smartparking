@@ -32,7 +32,7 @@ public class ParkingController {
 		
 		System.out.println(parking.getParkingType());
 		repoparking.save(parking);
-		return ("Parking");
+		return ("redirect:/listparking");
 	}
 	
 	@GetMapping("listparking")

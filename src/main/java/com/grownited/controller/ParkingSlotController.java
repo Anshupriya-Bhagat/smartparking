@@ -30,7 +30,7 @@ public class ParkingSlotController {
 		System.out.println(parkingslot.getParkingTag());
 		repoparkingslot.save(parkingslot);
 		
-		return("ParkingSlot");
+		return("redirect:/listparkingslot");
 	}
 	
 	@GetMapping("listparkingslot")

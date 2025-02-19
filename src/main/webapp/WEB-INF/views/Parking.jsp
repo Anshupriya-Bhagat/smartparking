@@ -12,6 +12,8 @@
      Address<input type="text" name="address"><br><br>
      TotalcapacitytwoWheeler<input type="text" name="totalCapacityTwoWheeler"><br><br>
      TotalcapacityfourWheeler<input type="text" name="totalCapacityFourWheeler"><br><br>
+     HourlyChargeForfourWheeler<input type="text" name="hourlyChargeForFourWheeler"><br><br>
+     HourlyChargeFortwoWheeler<input type="text" name="hourlyChargeForTwoWheeler"><br><br>
      OtherInformation<input type="text" name="otherInformation"><br><br>
      Latitude<input type="text" name="latitude"><br><br>
      Longitude<input type="text" name="longitude"><br><br>

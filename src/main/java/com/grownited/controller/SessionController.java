@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.grownited.Service.MailService;
 import com.grownited.entity.UserEntity;
 import com.grownited.repository.UserRepository;
 
@@ -17,6 +18,11 @@ public class SessionController {
 	
 	@Autowired
 	UserRepository repouser; 
+	
+	
+	@Autowired
+	MailService serviceMail;
+	
 	@GetMapping(value={"/","signup"})
 	public String signup() {
 		return("Signup");
@@ -33,6 +39,7 @@ public class SessionController {
 	@PostMapping("saveuser")
 	public String saveuser(UserEntity userEntity) {
 		repouser.save(userEntity);
+		serviceMail.sendWelcomeMail(userEntity.getEmail(), userEntity.getFirstName());
 		return ("Login");
 	}
 	

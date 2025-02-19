@@ -30,7 +30,7 @@ public class ReservationController {
 		System.out.println(reservation.getAmountPaid());
 		System.out.println(reservation.getSecurityAmountPaid());
 		reporeservation.save(reservation);
-		return ("Reservation");
+		return ("redirect:/listreservation");
 	}
 	
 	@GetMapping("listreservation")

@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>List Reservation</title>
 </head>
 <body>
-<table border="2px">
+<table border="1">
 <tr>
 <th>reservationId</th>
 <th>userId</th>

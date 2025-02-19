@@ -27,7 +27,7 @@ public class VehicleController {
 		System.out.println(vehicle.getVehicleType());
 		System.out.println(vehicle.getRegistrationNum());
 		repovehicle.save(vehicle);
-		return ("Vehicle");
+		return ("redirect:/listvehicle");
 	}
 	
 	@GetMapping("listvehicle")

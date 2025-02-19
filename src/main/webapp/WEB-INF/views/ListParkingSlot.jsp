@@ -5,17 +5,17 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>List ParkingSlot</title>
 </head>
 <body>
 <table border="1">
 <tr>
-<th>parkingId</th>
+<th>parkingSlotId</th>
 <th>minimumParkingMinutes</th>
 <th>floor</th>
 <th>active</th>
 <th>parkingTag</th>
-<th>parkingSlotId</th>
+<th>parkingId</th>
 <th>suvSupported</th>
 
 <th></th>
@@ -23,12 +23,12 @@
 <c:forEach items="${parkingslotList}" var="m">
        <tr>
        
-       <td>${m.parkingId}</td>
+       <td>${m.parkingSlotId}</td>
        <td>${m.minimumParkingMinutes}</td>
        <td>${m.floor}</td>
        <td>${m.active}</td>
        <td>${m.parkingTag}</td>
-       <td>${m.parkingSlotId}</td>
+       <td>${m.parkingId}</td>
        <td>${m.suvSupported}</td>
         
          

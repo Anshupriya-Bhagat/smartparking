@@ -26,7 +26,7 @@ public class LocationController {
 	public String savelocation(LocationEntity location) {
 		System.out.println(location.getLoctionName());
 		repolocation.save(location);
-		return "Signup";
+		return ("redirect:/listlocation");
 	}
 	@GetMapping("listlocation")
 	public String listLocation(Model model) {
