@@ -16,6 +16,10 @@
            Female<input type="radio" name="gender" value="female"><br><br>
     Password:<input type="password" name="password"><br><br>
     Contact Number:<input type="tel" name="contactnum"><br><br>
+    
+    OTP:<input type="password" name="otp"><br><br>
+    Security Amount:<input type="password" name="securityAmount"><br><br>
+    
     <input type="submit" value="signup">
   </form>
   <a href="login">Login</a>

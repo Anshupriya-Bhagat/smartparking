@@ -29,8 +29,10 @@ public class ParkingController {
 		System.out.println(parking.getTotalCapacityTwoWheeler());
 		System.out.println(parking.getAddress());
 		System.out.println(parking.getTitle());
-		
 		System.out.println(parking.getParkingType());
+		parking.setActive("Active");
+		parking.setHourlyChargeForFourWheeler(700);
+		parking.setHourlyChargeForTwoWheeler(500);
 		repoparking.save(parking);
 		return ("redirect:/listparking");
 	}

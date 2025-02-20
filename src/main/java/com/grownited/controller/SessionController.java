@@ -1,6 +1,7 @@
 package com.grownited.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -41,12 +42,31 @@ public class SessionController {
 		return("Login");
 	}
 	
+	@PostMapping("authenticate")
+	public String authenticate(String email, String password,Model model) {
+		System.out.println(email);
+		System.out.println(password);
+
+	
+		Optional<UserEntity> op = repouser.findByEmail(email);
+		if (op.isPresent()) {
+			// true
+			
+			UserEntity dbUser = op.get();
+			if (encoder.matches(password, dbUser.getPassword())) {
+				return "redirect:/home";
+			}
+		}
+		model.addAttribute("error","Invalid Credentials");
+		return "Login";
+	}
+	
 	
 	@PostMapping("saveuser")
 	public String saveuser(UserEntity userEntity) {
 		
 		serviceMail.sendWelcomeMail(userEntity.getEmail(), userEntity.getFirstName());
-		
+		userEntity.setRole("USER");
 		String encPassword = encoder.encode(userEntity.getPassword());
 		userEntity.setPassword(encPassword);
 		repouser.save(userEntity);
@@ -75,5 +95,30 @@ public class SessionController {
 	public String updatepassword() {
 		return ("Login");
 	}
+	
+	@GetMapping("viewusers")
+	public String viewuser(Integer userId, Model model) {
+		System.out.println("id ==>" +userId);
+		 Optional<UserEntity> op = repouser.findById(userId);
+		
+		if(op.isEmpty()) {
+			//data not found
+		}
+		else {
+			UserEntity user = op.get();
+			model.addAttribute("user",user);
+			}
+		return "ViewUsers";
+	}
+	
+	@GetMapping("deleteuser")
+	public String deleteuser(Integer userId) {
+		repouser.deleteById(userId);
+		return "redirect:/listuser";
+	}
+	
+	
+	
+}	
 
-}
+

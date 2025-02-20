@@ -11,7 +11,7 @@ import jakarta.persistence.Table;
 public class UserEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer userid;
+	private Integer userId;
 	private String firstName;
 	private String lastName;
 	private String email;
@@ -21,11 +21,12 @@ public class UserEntity {
 	private String role;
 	private Integer otp;
 	private String securityAmount;
-	public Integer getUserid() {
-		return userid;
+	
+	public Integer getUserId() {
+		return userId;
 	}
-	public void setUserid(Integer userid) {
-		this.userid = userid;
+	public void setUserId(Integer userId) {
+		this.userId = userId;
 	}
 	public String getFirstName() {
 		return firstName;
