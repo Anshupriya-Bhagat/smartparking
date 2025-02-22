@@ -70,7 +70,7 @@ public class SessionController {
 		String encPassword = encoder.encode(userEntity.getPassword());
 		userEntity.setPassword(encPassword);
 		repouser.save(userEntity);
-		return ("Login");
+		return ("Home");
 	}
 	
 	

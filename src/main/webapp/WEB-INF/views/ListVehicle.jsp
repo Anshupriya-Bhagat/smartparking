@@ -12,9 +12,9 @@
 <table border="1">
 <tr>
 <th>vehicleId</th>
-<th>userId</th>
 <th>registrationNum</th>
 <th>vehicleType</th>
+<th>Action</th>
 
 
 </tr>
@@ -22,10 +22,9 @@
        <tr>
        
        <td>${m.vehicleId}</td>
-       <td>${m.userId}</td>
        <td>${m.registrationNum}</td>
        <td>${m.vehicleType}</td>
-     
+     <td><a href="viewvehicle?vehicleId=${m.vehicleId }">View</a>|<a href="deletevehicle?vehicleId=${m.vehicleId }">Delete</a>|<a>Edit</a></td>
    </tr>
 </c:forEach>
 </table>

@@ -9,10 +9,15 @@
 </head>
 <body>
 <table border="1">
+<tr>
+<th>LocationName</th>
+</tr>
+
 
 <c:forEach items="${locationList}" var="m">
        <tr>
        <td>${m.loctionName}</td>
+       <td><a href="viewlocation?locationId=${m.locationId }">View</a> |<a href="viewlocation?locationId=${m.locationId }">Delete</a> | |Edit</td>
        </tr>
 			
 		

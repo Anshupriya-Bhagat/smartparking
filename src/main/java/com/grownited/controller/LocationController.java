@@ -1,6 +1,7 @@
 package com.grownited.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -33,6 +34,27 @@ public class LocationController {
 		List<LocationEntity> locationList = repolocation.findAll();
 		model.addAttribute("locationList", locationList);
 		return "ListLocation";
+	}
+	
+	@GetMapping("viewlocation")
+	public String viewlocation(Integer locationId, Model model) {
+		System.out.println("id ==>" +locationId);
+		 Optional<LocationEntity> op= repolocation.findById(locationId);
+		 if(op.isEmpty()) {
+			 //data not found
+		 }
+		 else {
+			 LocationEntity location = op.get();
+			 model.addAttribute("location", location);
+			 }
+		
+		return"ViewLocation";
+	}
+	
+	@GetMapping("deletelocation")
+	public String deletelocation(Integer locationId) {
+		repolocation.deleteById(locationId);
+		return"redirect:/listlocation";
 	}
 
 }

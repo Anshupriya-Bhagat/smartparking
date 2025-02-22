@@ -1,6 +1,7 @@
 package com.grownited.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -36,5 +37,29 @@ public class VehicleController {
 		model.addAttribute("vehicleList", vehicleList);
 		return("ListVehicle");
 	}
+	
+	@GetMapping("viewvehicle")
+	public String viewvehicle(Integer vehicleId, Model model) {
+		System.out.println("id ==>" +vehicleId);
+		Optional<VehicleEntity> op = repovehicle.findById(vehicleId);
+		if(op.isEmpty()) {
+			
+		}
+		else {
+			VehicleEntity vehicle = op.get();
+			model.addAttribute("vehicle", vehicle);
+			}
+		return"ViewVehicle";
+	}
+	
+	@GetMapping("deletevehicle")
+	public String deletevehicle(Integer vehicleId) {
+		repovehicle.deleteById(vehicleId);
+		return"redirect:/listvehicle";
+	}
+	
+	
+	
+	
 
 }

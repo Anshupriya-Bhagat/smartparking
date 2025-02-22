@@ -13,8 +13,6 @@
 <th>parkingId</th>
 <th>title</th>
 <th>address</th>
-<th>locationId</th>
-<th>ownerId</th>
 <th>totalCapacityTwoWheeler</th>
 <th>totalCapacityFourWheeler</th>
 <th>otherInformation</th>
@@ -24,6 +22,7 @@
 <th>longitude</th>
 <th>latitude</th>
 <th>parkingType</th>
+<th>Action</th>
 </tr>
 <c:forEach items="${parkingList}" var="m">
        <tr>
@@ -31,8 +30,6 @@
        <td>${m.parkingId}</td>
        <td>${m.title}</td>
        <td>${m.address}</td>
-       <td>${m.locationId}</td>
-        <td>${m.ownerId}</td>
         <td>${m.totalCapacityTwoWheeler}</td>
          <td>${m.totalCapacityFourWheeler}</td>
          <td>${m.otherInformation}</td>
@@ -42,6 +39,7 @@
          <td>${m.longitude}</td>
          <td>${m.latitude}</td>
          <td>${m.parkingType}</td>
+         <td><a href="viewparking?parkingId=${m.parkingId }">View</a>| <a href="deleteparking?parkingId=${m.parkingId }">Delete</a>|<a>Edit</a></td>
         
          
    </tr>

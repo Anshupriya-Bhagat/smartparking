@@ -8,8 +8,6 @@
 </head>
 <body>
 
-
-
 UserId: ${user.userId }<br><br>
 FirstName: ${user.firstName }<br><br>
 LastName: ${user.lastName }<br><br>

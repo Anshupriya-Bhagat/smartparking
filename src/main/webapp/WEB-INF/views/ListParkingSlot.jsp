@@ -17,6 +17,7 @@
 <th>parkingTag</th>
 <th>parkingId</th>
 <th>suvSupported</th>
+<th>Action</th>
 
 <th></th>
 </tr>
@@ -30,6 +31,7 @@
        <td>${m.parkingTag}</td>
        <td>${m.parkingId}</td>
        <td>${m.suvSupported}</td>
+       <td><a href="viewparkingslot?parkingSlotId=${m.parkingSlotId }">View</a>|<a href="deleteparkingslot?parkingSlotId=${m.parkingSlotId }">Delete</a>|<a>Edit</a></td>
         
          
    </tr>

@@ -1,6 +1,7 @@
 package com.grownited.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -42,6 +43,26 @@ public class ParkingController {
 		List<ParkingEntity> parkingList = repoparking.findAll();	
 		model.addAttribute("parkingList", parkingList);
 		return ("ListParking");
+	}
+	
+	@GetMapping("viewparking")
+	public String viewlocation(Integer parkingId,Model model) {
+		System.out.println("id==>" +parkingId);
+		Optional<ParkingEntity> op = repoparking.findById(parkingId);
+		if(op.isEmpty()) {
+			
+		}
+		else {
+			ParkingEntity parking = op.get();
+			model.addAttribute("parking", parking);
+			}
+		return"ViewParking";
+	}
+	
+	@GetMapping("deleteparking")
+	public String deleteuser(Integer parkingId) {
+		repoparking.deleteById(parkingId);
+		return "redirect:/listparking";
 	}
 		
 	
