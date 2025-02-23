@@ -57,7 +57,7 @@ public class SessionController {
 				return "redirect:/home";
 			}
 		}
-		model.addAttribute("error","Invalid Credentials");
+		model.addAttribute("error","Invalid Credentials....");
 		return "Login";
 	}
 	
