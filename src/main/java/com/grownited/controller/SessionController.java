@@ -14,6 +14,8 @@ import com.grownited.Service.MailService;
 import com.grownited.entity.UserEntity;
 import com.grownited.repository.UserRepository;
 
+import jakarta.servlet.http.HttpSession;
+
 
 @Controller
 public class SessionController {
@@ -43,18 +45,34 @@ public class SessionController {
 	}
 	
 	@PostMapping("authenticate")
-	public String authenticate(String email, String password,Model model) {
+	public String authenticate(String email, String password,Model model,HttpSession session) {
 		System.out.println(email);
 		System.out.println(password);
 
 	
 		Optional<UserEntity> op = repouser.findByEmail(email);
+		
+		
 		if (op.isPresent()) {
 			// true
 			
 			UserEntity dbUser = op.get();
-			if (encoder.matches(password, dbUser.getPassword())) {
-				return "redirect:/home";
+			boolean ans = encoder.matches(password, dbUser.getPassword());
+			
+			 if (ans==true) {
+				session.setAttribute("user", dbUser);
+				
+				 if(dbUser.getRole().equals("ADMIN")) {
+					 return("redirect:/admindashboard");
+				 }
+				 else if(dbUser.getRole().equals("USER")) {
+					 return "redirect:/home";
+				 }
+				 else {
+						model.addAttribute("error", "Please contact Admin with Error Code #0991");
+						return "Login";
+					}
+				
 			}
 		}
 		model.addAttribute("error","Invalid Credentials");
@@ -70,7 +88,7 @@ public class SessionController {
 		String encPassword = encoder.encode(userEntity.getPassword());
 		userEntity.setPassword(encPassword);
 		repouser.save(userEntity);
-		return ("Home");
+		return ("Login");
 	}
 	
 	
@@ -115,6 +133,11 @@ public class SessionController {
 	public String deleteuser(Integer userId) {
 		repouser.deleteById(userId);
 		return "redirect:/listuser";
+	}
+	
+	@GetMapping("logout")
+	public String logout() {
+		return("redirect:/login");
 	}
 	
 	
