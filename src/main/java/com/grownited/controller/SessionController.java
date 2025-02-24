@@ -75,7 +75,7 @@ public class SessionController {
 				
 			}
 		}
-		model.addAttribute("error","Invalid Credentials");
+		model.addAttribute("error","Invalid Credentials....");
 		return "Login";
 	}
 	
