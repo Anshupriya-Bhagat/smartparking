@@ -15,7 +15,7 @@ Email: ${user.email }<br><br>
 Password: ${user.password }<br><br>
 Gender: ${user.gender }<br><br>
 Role: ${user.role }<br><br>
-SecurityAmount: ${user.securityAmount }
+Contact Number: ${user.contactNum }
 
 </body>
 </html>

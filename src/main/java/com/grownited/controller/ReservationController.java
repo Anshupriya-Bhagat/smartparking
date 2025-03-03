@@ -30,6 +30,7 @@ public class ReservationController {
 		System.out.println(reservation.getPaymentStatus());
 		System.out.println(reservation.getAmountPaid());
 		System.out.println(reservation.getSecurityAmountPaid());
+		reservation.setPaymentStatus("Completed");
 		reporeservation.save(reservation);
 		return ("redirect:/listreservation");
 	}

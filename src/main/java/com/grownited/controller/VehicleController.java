@@ -9,8 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-
+import com.grownited.entity.UserEntity;
 import com.grownited.entity.VehicleEntity;
+import com.grownited.repository.UserRepository;
 import com.grownited.repository.VehicleRepository;
 
 @Controller
@@ -18,8 +19,15 @@ public class VehicleController {
 	
 	@Autowired
 	VehicleRepository repovehicle;
+	
+	@Autowired
+	UserRepository repouser;
+	
 	@GetMapping(value= {"/","vehicle"})
-	public String vehicle() {
+	public String vehicle(Model model) {
+		
+		 List<UserEntity> allusers  = repouser.findAll();
+		 model.addAttribute("allusers", allusers);
 		return ("Vehicle");
 	}
 	

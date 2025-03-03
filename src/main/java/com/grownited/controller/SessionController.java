@@ -75,8 +75,8 @@ public class SessionController {
 				
 			}
 		}
-		model.addAttribute("error","Invalid Credentials....");
-		return "Login";
+		model.addAttribute("error","Invalid Credentials");
+		return ("Login");
 	}
 	
 	
@@ -137,7 +137,7 @@ public class SessionController {
 	
 	@GetMapping("logout")
 	public String logout() {
-		return("redirect:/login");
+		return "redirect:/login";
 	}
 	
 	

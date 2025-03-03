@@ -17,10 +17,9 @@ public class UserEntity {
 	private String email;
 	private String password;
 	private String gender;
-	private Integer contactnum;
+	private Integer contactNum;
 	private String role;
-	private Integer otp;
-	private String securityAmount;
+	
 	
 	public Integer getUserId() {
 		return userId;
@@ -58,29 +57,18 @@ public class UserEntity {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public Integer getContactnum() {
-		return contactnum;
+	
+	public Integer getContactNum() {
+		return contactNum;
 	}
-	public void setContactnum(Integer contactnum) {
-		this.contactnum = contactnum;
+	public void setContactNum(Integer contactNum) {
+		this.contactNum = contactNum;
 	}
 	public String getRole() {
 		return role;
 	}
 	public void setRole(String role) {
 		this.role = role;
-	}
-	public Integer getOtp() {
-		return otp;
-	}
-	public void setOtp(Integer otp) {
-		this.otp = otp;
-	}
-	public String getSecurityAmount() {
-		return securityAmount;
-	}
-	public void setSecurityAmount(String securityAmount) {
-		this.securityAmount = securityAmount;
 	}
 	
 	

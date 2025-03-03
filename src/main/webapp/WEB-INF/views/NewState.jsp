@@ -9,7 +9,7 @@
 <body>
       <form action="savestate" method="post">
         StateName:<input type="text" name="stateName"><br><br>
-        <input type="submit">
+        <input type="submit" value="savestate">
       </form>
 </body>
 </html>
