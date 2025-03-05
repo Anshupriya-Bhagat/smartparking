@@ -180,7 +180,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">${user.firstName }</a>
         </div>
       </div>
 
@@ -244,7 +244,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="signup" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add user</p>
                 </a>
@@ -264,13 +264,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="listparking" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List parking</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="parking" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add parking</p>
                 </a>
@@ -290,13 +290,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="listreservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List reservation</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="reservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add reservation</p>
                 </a>
@@ -321,7 +321,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="parkingslot" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add parkingslot</p>
                 </a>
@@ -347,13 +347,39 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="vehicle" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Vehicle</p>
                 </a>
               </li>
               </ul>
           </li>
+          
+          
+           <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-city"></i>
+               <p>
+                City
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="listcity" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List City</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="city" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add City</p>
+                </a>
+              </li>
+              </ul>
+          </li>
+          
           
            <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
@@ -372,7 +398,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="location" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add location</p>
                 </a>

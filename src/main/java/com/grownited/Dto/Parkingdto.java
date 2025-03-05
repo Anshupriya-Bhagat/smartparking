@@ -1,16 +1,7 @@
-package com.grownited.entity;
+package com.grownited.Dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name="parking")
-public class ParkingEntity {
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+public class Parkingdto {
+	
 	private Integer parkingId;
 	private String title;
 	private String address;
@@ -24,6 +15,36 @@ public class ParkingEntity {
 	private Float longitude;
 	private Float latitude;
 	private String parkingType;
+	private String firstName;
+	private String lastName;
+	private String email;
+	private String gender;
+	private Integer contactNum;
+	
+	public Parkingdto(Integer parkingId, String title, String address, Integer userId, Integer totalCapacityTwoWheeler,
+			Integer totalCapacityFourWheeler, String otherInformation, String active, Integer hourlyChargeForTwoWheeler,
+			Integer hourlyChargeForFourWheeler, Float longitude, Float latitude, String parkingType, String firstName,
+			String lastName, String email, String gender, Integer contactNum) {
+		super();
+		this.parkingId = parkingId;
+		this.title = title;
+		this.address = address;
+		this.userId = userId;
+		this.totalCapacityTwoWheeler = totalCapacityTwoWheeler;
+		this.totalCapacityFourWheeler = totalCapacityFourWheeler;
+		this.otherInformation = otherInformation;
+		this.active = active;
+		this.hourlyChargeForTwoWheeler = hourlyChargeForTwoWheeler;
+		this.hourlyChargeForFourWheeler = hourlyChargeForFourWheeler;
+		this.longitude = longitude;
+		this.latitude = latitude;
+		this.parkingType = parkingType;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.gender = gender;
+		this.contactNum = contactNum;
+	}
 	public Integer getParkingId() {
 		return parkingId;
 	}
@@ -42,8 +63,6 @@ public class ParkingEntity {
 	public void setAddress(String address) {
 		this.address = address;
 	}
-
-	
 	public Integer getUserId() {
 		return userId;
 	}
@@ -68,15 +87,12 @@ public class ParkingEntity {
 	public void setOtherInformation(String otherInformation) {
 		this.otherInformation = otherInformation;
 	}
-	
 	public String getActive() {
 		return active;
 	}
 	public void setActive(String active) {
 		this.active = active;
 	}
-	
-	
 	public Integer getHourlyChargeForTwoWheeler() {
 		return hourlyChargeForTwoWheeler;
 	}
@@ -107,7 +123,40 @@ public class ParkingEntity {
 	public void setParkingType(String parkingType) {
 		this.parkingType = parkingType;
 	}
-
+	public String getFirstName() {
+		return firstName;
+	}
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+	public Integer getContactNum() {
+		return contactNum;
+	}
+	public void setContactNum(Integer contactNum) {
+		this.contactNum = contactNum;
+	}
+	
+	
+	
+	
 	
 
 }

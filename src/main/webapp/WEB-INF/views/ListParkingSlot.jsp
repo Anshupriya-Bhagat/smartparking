@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | DataTables</title>
+  <title>ParkingSlot DataTables</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -181,7 +181,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">${user.firstName}</a>
         </div>
       </div>
 
@@ -244,7 +244,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="singup" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add user</p>
                 </a>
@@ -270,7 +270,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="parking" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add parking</p>
                 </a>
@@ -294,7 +294,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="parkingslot" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add parkingslot</p>
                 </a>
@@ -320,7 +320,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="reservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add reservation</p>
                 </a>
@@ -344,7 +344,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="vehicle" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Vehicle</p>
                 </a>
@@ -370,7 +370,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="location" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add location</p>
                 </a>

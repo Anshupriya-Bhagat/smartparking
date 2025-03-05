@@ -13,7 +13,7 @@ public class VehicleEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer vehicleId;
 	private Integer userId;
-	private Integer registrationNum;
+	private String registrationNum;
 	private String vehicleType;
 	public Integer getVehicleId() {
 		return vehicleId;
@@ -27,10 +27,12 @@ public class VehicleEntity {
 	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
-	public Integer getRegistrationNum() {
+	
+	
+	public String getRegistrationNum() {
 		return registrationNum;
 	}
-	public void setRegistrationNum(Integer registrationNum) {
+	public void setRegistrationNum(String registrationNum) {
 		this.registrationNum = registrationNum;
 	}
 	public String getVehicleType() {

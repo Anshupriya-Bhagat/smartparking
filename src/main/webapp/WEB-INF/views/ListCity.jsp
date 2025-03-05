@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>List of Vehicle</title>
+  <title>AdminLTE 3 | DataTables</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -18,7 +18,6 @@
   <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-  <link rel="stylesheet" href="/webjars/font-awesome/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 </head>
@@ -204,9 +203,9 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                
-           <li class="nav-item ">
+           <li class="nav-item">
             <a href="#" class="nav-link ">
-              <i class="fas fa-sign-in-alt"></i>
+               <i class="fas fa-sign-in-alt"></i>
               <p>
                 Pages
                 <i class="right fas fa-angle-left"></i>
@@ -226,12 +225,12 @@
                 </a>
               </li>
               </ul>
-          </li>    
+          </li>     
                
           <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="fas fa-users"></i>
-              
+             <i class="fas fa-users"></i>
+             
               <p>
                 Users
                 <i class="right fas fa-angle-left"></i>
@@ -256,7 +255,8 @@
           
            <li class="nav-item ">
             <a href="#" class="nav-link ">
-            <i class="fas fa-warehouse"></i>
+              <i class="fas fa-parking"></i>
+              
               <p>
                 Parking
                 <i class="right fas fa-angle-left"></i>
@@ -279,34 +279,10 @@
           </li>
           
           
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-square-parking"></i>
-              <p>
-                ParkingSlot
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listparkingslot" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List parkingSlot</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="parkingslot" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add parkingSlot</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-          
            <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="fas fa-calendar-check"></i>
+              
               <p>
                 Reservation
                 <i class="right fas fa-angle-left"></i>
@@ -329,11 +305,37 @@
           </li>
           
           
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="fas fa-truck-moving"></i>
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-warehouse"></i>
               <p>
-               Vehicle
+                ParkingSlot
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="listparkingslot" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List parkingslot</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="parkingslot" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add parkingslot</p>
+                </a>
+              </li>
+              </ul>
+          </li>
+          
+          
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-truck-moving"></i>
+              
+              <p>
+                Vehicle
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
@@ -354,9 +356,8 @@
           </li>
           
           
-          
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
               <i class="fas fa-city"></i>
                <p>
                 City
@@ -379,8 +380,7 @@
               </ul>
           </li>
           
-          
-          <li class="nav-item ">
+           <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="fas fa-map-marker-alt"></i>
               
@@ -405,7 +405,7 @@
               </ul>
           </li>
           
-          
+         
           <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
@@ -422,12 +422,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="card-title">Vehicle DataTable</h1>
+             <h1 class="card-title">City DataTable</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="AdminDashboard">Home</a></li>
-              <li class="breadcrumb-item active">List of vehicles</li>
+              <li class="breadcrumb-item active">List of Cities</li>
             </ol>
           </div>
         </div>
@@ -441,33 +441,30 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                
+               
               </div>
               <!-- /.card-header -->
               <div class="card-body" style="min-height:702.33px">
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
-                     <tr>
-                       <th>VehicleId</th>
-                       <th>RegistrationNum</th>
-                       <th>VehicleType</th>
-                       <th>Action</th>
-                    </tr>
+                  <tr>
+                    <th>cityId</th>
+                    <th>cityName</th>
+                    <th>Action</th>
+                  </tr>
                   </thead>
                   <tbody>
-                  <c:forEach items="${vehicleList}" var="m">
-                     <tr>
-                       <td>${m.vehicleId}</td>
-                       <td>${m.registrationNum}</td>
-                       <td>${m.vehicleType}</td>
-                       <td><a href="viewvehicle?vehicleId=${m.vehicleId }"><i class="fas fa-eye"></i>
-                      </a>|<a href="deletevehicle?vehicleId=${m.vehicleId }"><i class="fas fa-trash-alt"></i></a>|
-                      <a><i class="fas fa-edit"></i>
-                      </a></td>
-                   </tr>
-                </c:forEach>
-                </tbody>
-               </table>
+                       <c:forEach items="${allcity}" var="m">
+                          <tr>
+                          <td>${m.cityId}</td>
+                          <td>${m.cityName}</td>	
+                          <td> <a href="viewcity?cityId=${m.cityId}"><i class="fas fa-eye"></i></a> | 
+                          <a href="deletecity?cityId=${m.cityId}"><i class="fas fa-trash-alt"></i></a>| <i class="fas fa-edit"></i></td>
+                         </tr>
+		              </c:forEach>
+                  </tbody>
+                 
+                </table>
               </div>
               <!-- /.card-body -->
             </div>

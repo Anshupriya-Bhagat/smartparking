@@ -9,6 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+
+import com.grownited.Dto.Vehicledto;
 import com.grownited.entity.UserEntity;
 import com.grownited.entity.VehicleEntity;
 import com.grownited.repository.UserRepository;
@@ -41,8 +43,9 @@ public class VehicleController {
 	
 	@GetMapping("listvehicle")
 	public String listvehicle(Model model) {
-		List<VehicleEntity> vehicleList = repovehicle .findAll();
-		model.addAttribute("vehicleList", vehicleList);
+		List<Vehicledto> allvehicle = repovehicle.getAll();
+
+		model.addAttribute("allvehicle", repovehicle.getAll());
 		return("ListVehicle");
 	}
 	

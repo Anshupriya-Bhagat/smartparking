@@ -9,17 +9,30 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.grownited.Dto.Parkingdto;
 import com.grownited.entity.ParkingEntity;
+import com.grownited.entity.UserEntity;
 import com.grownited.repository.ParkingRepository;
+import com.grownited.repository.UserRepository;
 
 @Controller
 public class ParkingController {
 	
 	@Autowired
 	ParkingRepository repoparking;
+	
+	@Autowired
+	UserRepository repouser;
+	
+	
+	
 	@GetMapping(value= {"/","parking"})
-	public String parking() {
-		return("Parking");
+	public String parking(Model model) {
+		
+		List<UserEntity> allusers  = repouser.findAll();
+		 model.addAttribute("allusers", allusers);
+		 
+		return"Parking";
 	}
 	
 	@PostMapping("saveparking")
@@ -35,14 +48,16 @@ public class ParkingController {
 		parking.setHourlyChargeForFourWheeler(700);
 		parking.setHourlyChargeForTwoWheeler(500);
 		repoparking.save(parking);
-		return ("redirect:/listparking");
+		return "redirect:/listparking";
 	}
 	
 	@GetMapping("listparking")
 	public String listaprking(Model model) {
-		List<ParkingEntity> parkingList = repoparking.findAll();	
-		model.addAttribute("parkingList", parkingList);
-		return ("ListParking");
+		
+		//List<Parkingdto> allparking = repoparking.getAll();
+		model.addAttribute("allparking",repoparking.getAll());
+		
+		return "ListParking";
 	}
 	
 	@GetMapping("viewparking")

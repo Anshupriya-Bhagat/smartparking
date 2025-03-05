@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AdminLTE 3 | DataTables</title>
+  <title>Parking DataTables</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -181,7 +181,7 @@
           <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">${user.firstName}</a>
         </div>
       </div>
 
@@ -245,7 +245,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="signup" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add user</p>
                 </a>
@@ -271,7 +271,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="parkingslot" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add parkingslot</p>
                 </a>
@@ -297,7 +297,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="reservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add reservation</p>
                 </a>
@@ -316,15 +316,40 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link">
+                <a href="listparking" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List parking</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="parking" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add parking</p>
+                </a>
+              </li>
+              </ul>
+          </li>
+          
+          
+           <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-city"></i>
+               <p>
+                City
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="listcity" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List City</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="newcity" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add City</p>
                 </a>
               </li>
               </ul>
@@ -348,7 +373,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="location" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add location</p>
                 </a>
@@ -373,7 +398,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./index2.html" class="nav-link">
+                <a href="vehicle" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add Vehicle</p>
                 </a>
@@ -424,23 +449,23 @@
                 <table id="example2" class="table table-bordered table-hover">
                  <thead>
                  <tr>
-                 <th>parkingId</th>
-                 <th>title</th>
-                 <th>address</th>
-                 <th>totalCapacityTwoWheeler</th>
-                 <th>totalCapacityFourWheeler</th>
-                 <th>otherInformation</th>
-                 <th>active</th>
-                 <th>hourlyChargeForTwoWheeler</th>
+                 <th>ParkingId</th>
+                 <th>Title</th>
+                 <th>Address</th>
+                 <th>TotalCapacityTwoWheeler</th>
+                 <th>TotalCapacityFourWheeler</th>
+                 <th>OtherInformation</th>
+                 <th>Active</th>
+                 <th>HourlyChargeForTwoWheeler</th>
                  <th>hourlyChargeForFourWheeler</th>
-                 <th>longitude</th>
-                 <th>latitude</th>
-                 <th>parkingType</th>
+                 <th>Longitude</th>
+                 <th>Latitude</th>
+                 <th>ParkingType</th>
                  <th>Action</th>
                  </tr>
                  </thead>
                  <tbody>
-                <c:forEach items="${parkingList}" var="m">
+                <c:forEach items="${allparking}" var="m">
                 <tr>
                   <td>${m.parkingId}</td>
                   <td>${m.title}</td>

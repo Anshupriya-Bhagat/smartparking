@@ -27,8 +27,24 @@
       <p class="login-box-msg">You are only one step a way from your new password, recover your password now.</p>
 
       <form action="updatepassword" method="post">
+      <div class="input-group mb-3">
+          <input type="text" class="form-control" name="email" placeholder="Email">
+          <div class="input-group-append">
+            <div class="input-group-text">
+             <i class="fa fa-envelope"></i>
+            </div>
+          </div>
+        </div>
         <div class="input-group mb-3">
-          <input type="password" class="form-control" name="passowrd" placeholder="Password">
+          <input type="text" class="form-control" name="otp" placeholder="otp">
+          <div class="input-group-append">
+            <div class="input-group-text">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+          <input type="password" class="form-control" name="password" placeholder="Password">
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-lock"></span>
@@ -39,7 +55,7 @@
           <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password">
           <div class="input-group-append">
             <div class="input-group-text">
-              <span class="fas fa-lock"></span>
+              <i class="fas fa-check-circle"></i>
             </div>
           </div>
         </div>
