@@ -23,6 +23,7 @@
   <div class="card">
     <div class="card-body login-card-body">
       <p class="login-box-msg">Sign in to start your session</p>
+          ${msg }
 
       <form action="authenticate" method="post">
         <div class="input-group mb-3">

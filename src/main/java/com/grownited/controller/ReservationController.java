@@ -11,8 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.grownited.Dto.Reservationdto;
-import com.grownited.Dto.Vehicledto;
+
 import com.grownited.entity.ParkingEntity;
 import com.grownited.entity.ParkingSlotEntity;
 import com.grownited.entity.ReservationEntity;
@@ -73,7 +72,7 @@ public class ReservationController {
 	@GetMapping("listreservation")
 	public String listreservation(Model model) {
 		
-		List<Reservationdto> allreservation = reporeservation.getAll();
+		List<Object[]> allreservation = reporeservation.getAll();
 
 		model.addAttribute("allreservation", reporeservation.getAll());
 		

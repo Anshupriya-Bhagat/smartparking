@@ -459,15 +459,15 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <c:forEach items="${reservationList}" var="m">
+                  <c:forEach items="${allreservation}" var="m">
                      <tr>
-                     <td>${m.date}</td>
-                     <td>${m.startTime}</td>	
-                     <td>${m.endTime}</td>
-                     <td>${m.paymentStatus}</td>
-                     <td>${m.amountPaid}</td>
-                    <td><a href="viewreservation?reservationId=${m.reservationId }"><i class="fas fa-eye"></i>
-                    </a>|<a href="deletereservation?reservationId=${m.reservationId }"><i class="fas fa-trash-alt"></i></a>|
+                     <td>${m[8]}</td>
+                     <td>${m[9]}</td>	
+                     <td>${m[10]}</td>
+                     <td>${m[4]}</td>
+                     <td>${m[1]}</td>
+                    <td><a href="viewreservation?reservationId=${m[0] }"><i class="fas fa-eye"></i>
+                    </a>|<a href="deletereservation?reservationId=${m[0] }"><i class="fas fa-trash-alt"></i></a>|
                     <a><i class="fas fa-edit"></i></a></td>
                     </tr>
                      </c:forEach>

@@ -455,13 +455,13 @@
                     </tr>
                   </thead>
                   <tbody>
-                  <c:forEach items="${vehicleList}" var="m">
+                  <c:forEach items="${allvehicle}" var="m">
                      <tr>
-                       <td>${m.vehicleId}</td>
-                       <td>${m.registrationNum}</td>
-                       <td>${m.vehicleType}</td>
-                       <td><a href="viewvehicle?vehicleId=${m.vehicleId }"><i class="fas fa-eye"></i>
-                      </a>|<a href="deletevehicle?vehicleId=${m.vehicleId }"><i class="fas fa-trash-alt"></i></a>|
+                       <td>${m[0]}</td>
+                       <td>${m[1]}</td>	
+                       <td>${m[3]}</td>
+                       <td><a href="viewvehicle?vehicleId=${m[0] }"><i class="fas fa-eye"></i>
+                      </a>|<a href="deletevehicle?vehicleId=${m[0] }"><i class="fas fa-trash-alt"></i></a>|
                       <a><i class="fas fa-edit"></i>
                       </a></td>
                    </tr>

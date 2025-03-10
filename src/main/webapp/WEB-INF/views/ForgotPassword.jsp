@@ -43,6 +43,8 @@
           <!-- /.col -->
         </div>
       </form>
+             
+              ${error}
 
       <p class="mt-3 mb-1">
         <a href="login">Login</a>
