@@ -382,6 +382,31 @@
           </li>
           
           
+           <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-city"></i>
+               <p>
+                State
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="liststate" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List State</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="newstate" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add State</p>
+                </a>
+              </li>
+              </ul>
+          </li>
+          
+          
           
           <li class="nav-item">
             <a href="#" class="nav-link">

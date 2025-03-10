@@ -1,12 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Parking DataTables</title>
+  <title>AdminLTE 3 | DataTables</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -201,7 +203,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                
-           <li class="nav-item ">
+           <li class="nav-item">
             <a href="#" class="nav-link ">
                <i class="fas fa-sign-in-alt"></i>
               <p>
@@ -223,12 +225,12 @@
                 </a>
               </li>
               </ul>
-          </li>    
+          </li>     
                
           <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="fas fa-users"></i>
-              
+             <i class="fas fa-users"></i>
+             
               <p>
                 Users
                 <i class="right fas fa-angle-left"></i>
@@ -253,24 +255,24 @@
           
            <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="fas fa-warehouse"></i>
+              <i class="fas fa-parking"></i>
               
               <p>
-                ParkingSlot
+                Parking
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="listparkingslot" class="nav-link">
+                <a href="listparking" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List parkingslot</p>
+                  <p>List parking</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="parkingslot" class="nav-link">
+                <a href="parking" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add parkingslot</p>
+                  <p>Add parking</p>
                 </a>
               </li>
               </ul>
@@ -302,34 +304,60 @@
               </ul>
           </li>
           
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="fas fa-parking"></i>
-              
+          
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-warehouse"></i>
               <p>
-                Parking
+                ParkingSlot
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="listparking" class="nav-link">
+                <a href="listparkingslot" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List parking</p>
+                  <p>List parkingslot</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="parking" class="nav-link">
+                <a href="parkingslot" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add parking</p>
+                  <p>Add parkingslot</p>
                 </a>
               </li>
               </ul>
           </li>
           
           
-           <li class="nav-item ">
+          <li class="nav-item ">
             <a href="#" class="nav-link ">
+              <i class="fas fa-truck-moving"></i>
+              
+              <p>
+                Vehicle
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="listvehicle" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List Vehicle</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="vehicle" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Vehicle</p>
+                </a>
+              </li>
+              </ul>
+          </li>
+          
+          
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
               <i class="fas fa-city"></i>
                <p>
                 City
@@ -352,8 +380,7 @@
               </ul>
           </li>
           
-          
-          <li class="nav-item ">
+           <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="fas fa-map-marker-alt"></i>
               
@@ -378,125 +405,76 @@
               </ul>
           </li>
           
-          
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-truck-moving"></i>
-              <p>
-               Vehicle
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listlocation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List Vehicle</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="vehicle" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add Vehicle</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-        </ul>
-      </nav>    
+         
           <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
   
   
+  
+  
+
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" style="width:auto">
+  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="card-title">Vehicle DataTable</h1>
+             <h1 class="card-title">State DataTable</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="AdminDashboard">Home</a></li>
-              <li class="breadcrumb-item active">List of Vehicle</li>
+              <li class="breadcrumb-item active">List of State</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
 
-   
-     <!-- Main content -->
-    <section class="content">
+    <!-- Main content -->
+    <section class="content" >
       <div class="container-fluid">
-        <!-- SELECT2 EXAMPLE -->
-        <div class="card card-default">
-          <div class="card-header">
-            <h3 class="card-title">Select2 (Default Theme)</h3>
-
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool" data-card-widget="remove">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
-          </div>
-          <!-- /.card-header -->
-          <div class="card-body">
-          <form action="savevehicle" method="post">
-            <div class="row">
-              <div class="col-md-6">
-              
-              <!-- /.form-group -->
-              <div class="form-group">
-                  <label>User</label>
-                  <select name="userId" class="form-control select2"  style="width: 100%;">
-			     <option>Select User</option>
-			     <c:forEach items="${allusers}" var="s">
-
-					<option value="${s.userId}">${s.firstName }</option>
-			    </c:forEach>
-			    </select> 
-                </div>
-                  <!-- /.form-group -->
-                <div class="form-group">
-                  <label>RegistrationNum</label>
-                 <input type="text" name="registrationNum" class="form-control select2" style="width: 100%;">
-                </div>
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
                
-                <!-- /.form-group -->
-                <div class="form-group">
-                  <label>VehicleType</label>
-                  <select class="form-control select2"  name="vehicleType" style="width: 100%;">
-                    <option>TwoWheeler</option>
-                    <option>ThreeWheeler</option>
-                    <option>FourWheeler</option>
-                    <option>SixWheeler</option>
-                  </select>
-                </div>
-               
-                <!-- /.form-group -->
-                <input type=submit  class="btn btn-primary" value=savevehicle>
               </div>
-              <!-- /.col -->
+              <!-- /.card-header -->
+              <div class="card-body" style="min-height:702.33px">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                  <tr>
+                    <th>stateId</th>
+                    <th>stateName</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                       <c:forEach items="${allstate}" var="m">
+                          <tr>
+                          <td>${m.stateID}</td>
+                          <td>${m.stateName}</td>	
+                          <td> <a href="viewstate?stateID=${m.stateID}"><i class="fas fa-eye"></i></a> | 
+                          <a href="deletestate?stateID=${m.stateName}"><i class="fas fa-trash-alt"></i></a>| <i class="fas fa-edit"></i></td>
+                         </tr>
+		              </c:forEach>
+                  </tbody>
+                 
+                </table>
+              </div>
+              <!-- /.card-body -->
             </div>
-            <!-- /.row -->
-
-            </form>
-            <!-- /.row -->
-          </div>
-          
-          <!-- /.card-body -->
+            <!-- /.card -->
+            </div>
+          <!-- /.col -->
         </div>
-        <!-- /.card -->
-    
-    </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>

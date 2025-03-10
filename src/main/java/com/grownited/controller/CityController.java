@@ -35,7 +35,7 @@ public class CityController {
 	public String savecity(CityEntity city) {
 		System.out.println(city.getCityName());
 		repocity.save(city);
-		return("redirect:/newcity");
+		return("redirect:/listcity");
 	}
 	
 	@GetMapping("listcity")
