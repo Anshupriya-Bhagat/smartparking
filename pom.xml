@@ -94,6 +94,12 @@
            <artifactId>font-awesome</artifactId>
            <version>6.5.1</version>  <!-- Check for latest version -->
       </dependency>
+      
+      <dependency>
+			<groupId>com.cloudinary</groupId>
+			<artifactId>cloudinary-http44</artifactId>
+			<version>1.33.0</version>
+		</dependency>
 
 		
 	</dependencies>

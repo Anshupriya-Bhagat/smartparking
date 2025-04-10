@@ -13,18 +13,32 @@ public class LocationEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer locationId;
 	private String loctionName;
+	private Integer cityId;
 	public Integer getLocationId() {
 		return locationId;
 	}
-	public void setLoctionId(Integer locationId) {
+	public void setLocationId(Integer locationId) {
 		this.locationId = locationId;
 	}
 	public String getLoctionName() {
 		return loctionName;
 	}
-	public void setLoctionName(String locationName) {
-		this.loctionName = locationName;
+	public void setLoctionName(String loctionName) {
+		this.loctionName = loctionName;
 	}
+	public Integer getCityId() {
+		return cityId;
+	}
+	public void setCityId(Integer cityId) {
+		this.cityId = cityId;
+	}
+	
+
+	
+	
+	
+
+    
 	
 
 	

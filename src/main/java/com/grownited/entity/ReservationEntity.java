@@ -18,8 +18,8 @@ public class ReservationEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer reservationId;
 	private Integer userId;
-	private Integer parkingSlotId;
 	private Integer parkingId;
+	private Integer locationId;
 	private Integer vehicleId;
 	private Date date;
 	private String startTime;
@@ -27,6 +27,9 @@ public class ReservationEntity {
 	private String paymentStatus;
 	private Integer amountPaid;
 	private Integer securityAmountPaid;
+	private Integer countReservationsFromLastMonth;
+	private Integer startDate;
+	private Integer endDate;
 	public Integer getReservationId() {
 		return reservationId;
 	}
@@ -34,17 +37,10 @@ public class ReservationEntity {
 		this.reservationId = reservationId;
 	}
 	public Integer getUserId() {
-
-	return userId;
+		return userId;
 	}
 	public void setUserId(Integer userId) {
 		this.userId = userId;
-	}
-	public Integer getParkingSlotId() {
-		return parkingSlotId;
-	}
-	public void setParkingSlotId(Integer parkingSlotId) {
-		this.parkingSlotId = parkingSlotId;
 	}
 	public Integer getParkingId() {
 		return parkingId;
@@ -52,15 +48,19 @@ public class ReservationEntity {
 	public void setParkingId(Integer parkingId) {
 		this.parkingId = parkingId;
 	}
+	
+	public Integer getLocationId() {
+		return locationId;
+	}
+	public void setLocationId(Integer locationId) {
+		this.locationId = locationId;
+	}
 	public Integer getVehicleId() {
 		return vehicleId;
 	}
 	public void setVehicleId(Integer vehicleId) {
 		this.vehicleId = vehicleId;
 	}
-	
-	
-
 	public Date getDate() {
 		return date;
 	}
@@ -97,6 +97,24 @@ public class ReservationEntity {
 	public void setSecurityAmountPaid(Integer securityAmountPaid) {
 		this.securityAmountPaid = securityAmountPaid;
 	}
-
-
+	public Integer getCountReservationsFromLastMonth() {
+		return countReservationsFromLastMonth;
+	}
+	public void setCountReservationsFromLastMonth(Integer countReservationsFromLastMonth) {
+		this.countReservationsFromLastMonth = countReservationsFromLastMonth;
+	}
+	public Integer getStartDate() {
+		return startDate;
+	}
+	public void setStartDate(Integer startDate) {
+		this.startDate = startDate;
+	}
+	public Integer getEndDate() {
+		return endDate;
+	}
+	public void setEndDate(Integer endDate) {
+		this.endDate = endDate;
+	}
+	
+	
 }

@@ -24,7 +24,7 @@
     <div class="card-body register-card-body">
       <p class="login-box-msg">Register a new membership</p>
 
-      <form action="saveuser" method="post">
+      <form action="saveuser" method="post" encType="multipart/form-data">
         <div class="input-group mb-3">
           <input type="text" class="form-control" name="firstName" placeholder="First name">
           <div class="input-group-append">
@@ -66,10 +66,21 @@
             </div>
           </div>
         </div>
-        <div>Gender:
+        <div class="input-group mb-3">Gender:
           Male<input type="radio" name="gender" value="male">
           female<input type="radio" name="gender" value="female">
         </div>
+        <div class="input-group mb-3">
+          <input type="file" class="form-control" name="profilePic" placeholder="profilePic">
+          <div class="input-group-append">
+            <div class="input-group-text">
+            <i class="fas fa-upload"></i>
+            
+             </div>
+          </div>
+        </div>
+        ${error }
+        
         
         
         <div class="row">

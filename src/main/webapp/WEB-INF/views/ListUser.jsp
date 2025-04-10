@@ -2,8 +2,6 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -178,7 +176,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">${user.firstName}</a>
@@ -204,35 +202,20 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                
-            <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-               <i class="fas fa-sign-in-alt"></i>
-              <p>
-                Pages
-                <i class="right fas fa-angle-left"></i>
-              </p>
+               
+            <li class="nav-item ">
+            <a href="admindashboard" class="nav-link ">
+               <i class="fas fa-tachometer-alt"></i> 
+                <p>
+                Home
+                </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="signup" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>SignUp</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="login" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Login</p>
-                </a>
-              </li>
-              </ul>
-          </li> 
+            </li>
           
           
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
+           <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
               <i class="fas fa-users"></i>
-              
               <p>
                 Users
                 <i class="right fas fa-angle-left"></i>
@@ -255,8 +238,9 @@
           </li>   
                
           
-           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+          
+            <li class="nav-item ">
+            <a href="#" class="nav-link ">
               <i class="fas fa-parking"></i>
               <p>
                 Parking
@@ -270,18 +254,12 @@
                   <p>List parking</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="parking" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add parking</p>
-                </a>
-              </li>
+              
               </ul>
           </li>
           
-          
-           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+           <li class="nav-item ">
+            <a href="#" class="nav-link ">
               <i class="fas fa-calendar-check"></i>
               <p>
                 Reservation
@@ -304,32 +282,53 @@
               </ul>
           </li>
           
-          
-           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="fas fa-warehouse"></i>
+         <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-truck-moving"></i>
               <p>
-                ParkingSlot
+                Vehicle
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="listparkingslot" class="nav-link">
+                <a href="listvehicle" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List parkingSlot</p>
+                  <p>List Vehicle</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="parkingslot" class="nav-link">
+                <a href="vehicle" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add parkingSlot</p>
+                  <p>Add Vehicle</p>
                 </a>
               </li>
               </ul>
           </li>
           
-          
+        <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>
+                Location
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="listlocation" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List location</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="location" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add location</p>
+                </a>
+              </li>
+              </ul>
+          </li>
           
            <li class="nav-item ">
             <a href="#" class="nav-link ">
@@ -355,31 +354,17 @@
               </ul>
           </li>
           
+         
           
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="fas fa-map-marker-alt"></i>
-              <p>
-                Location
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listlocation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List location</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="location" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add location</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
+           <li class="nav-item ">
+            <a href="login" class="nav-link " style="background-color:red">
+                <i class="fas fa-power-off"></i> 
+                 <p>Logout</p>
+              </a>
+            </li>
+          </ul>
+          </nav>
+         
          
           <!-- /.sidebar-menu -->
     </div>
@@ -401,7 +386,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="AdminDashboard">Home</a></li>
+              <li class="breadcrumb-item"><a href="home">Home</a></li>
               <li class="breadcrumb-item active">List of users</li>
             </ol>
           </div>
@@ -441,7 +426,7 @@
                      <td>${m.gender}</td>
                      <td> <a href="viewusers?userId=${m.userId}"><i class="fas fa-eye"></i></a> | 
                      <a href="deleteuser?userId=${m.userId}"><i class="fas fa-trash-alt"></i>
-                     </a>| <i class="fas fa-edit"></i></td>
+                     </a>|<a href="edituser?userId=${m.userId}"><i class="fas fa-edit"></i></a> </td>
                      </t>
                      </c:forEach>
                   </tbody>

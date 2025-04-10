@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Parking DataTables</title>
+  <title>Reservation DataTables</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -29,7 +29,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="admindashboard" class="nav-link">Home</a>
+        <a href="home" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -175,7 +175,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">${user.firstName}</a>
@@ -201,86 +201,38 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                
-           <li class="nav-item ">
+                     <li class="nav-item ">
             <a href="#" class="nav-link ">
-               <i class="fas fa-sign-in-alt"></i>
-              <p>
-                Pages
-                <i class="right fas fa-angle-left"></i>
-              </p>
+               <i class="fas fa-tachometer-alt"></i> 
+                <p>
+                Home
+                </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="signup" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>SignUp</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="login" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Login</p>
-                </a>
-              </li>
-              </ul>
-          </li>    
+            </li>   
                
+          
           <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="fas fa-users"></i>
-              
+              <i class="fas fa-parking"></i>
               <p>
-                Users
+                Parking
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="listuser" class="nav-link">
+                <a href="listparking" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List users</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="signup" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add user</p>
+                  <p>List parking</p>
                 </a>
               </li>
               </ul>
           </li>
           
           
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-warehouse"></i>
-              
-              <p>
-                ParkingSlot
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listparkingslot" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List parkingslot</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="parkingslot" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add parkingslot</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-          
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
+           <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
               <i class="fas fa-calendar-check"></i>
-              
               <p>
                 Reservation
                 <i class="right fas fa-angle-left"></i>
@@ -297,82 +249,6 @@
                 <a href="reservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add reservation</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="fas fa-parking"></i>
-              
-              <p>
-                Parking
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listparking" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List parking</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="parking" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add parking</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-          
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-city"></i>
-               <p>
-                City
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listcity" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List City</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="newcity" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add City</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-          
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-map-marker-alt"></i>
-              
-              <p>
-                Location
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listlocation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List location</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="location" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add location</p>
                 </a>
               </li>
               </ul>
@@ -402,6 +278,62 @@
               </li>
               </ul>
           </li>
+          
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>
+                Location
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="listlocation" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List location</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="location" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add location</p>
+                </a>
+              </li>
+              </ul>
+          </li>
+          
+           <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-city"></i>
+               <p>
+                City
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="listcity" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List City</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="newcity" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add City</p>
+                </a>
+              </li>
+              </ul>
+          </li>
+          
+           <li class="nav-item ">
+            <a href="login" class="nav-link " style="background-color:red">
+                <i class="fas fa-power-off"></i> 
+                 <p>Logout</p>
+              </a>
+            </li>
+          
         </ul>
       </nav>    
           <!-- /.sidebar-menu -->
@@ -421,7 +353,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="AdminDashboard">Home</a></li>
+              <li class="breadcrumb-item"><a href="home">Home</a></li>
               <li class="breadcrumb-item active">List of reservation</li>
             </ol>
           </div>
@@ -435,52 +367,32 @@
       <div class="container-fluid">
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default">
-          <div class="card-header">
-            <h3 class="card-title">Select2 (Default Theme)</h3>
-
-            <div class="card-tools">
-              <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                <i class="fas fa-minus"></i>
-              </button>
-              <button type="button" class="btn btn-tool" data-card-widget="remove">
-                <i class="fas fa-times"></i>
-              </button>
-            </div>
-          </div>
+          
           <!-- /.card-header -->
           <div class="card-body">
           <form action="savereservation" method="post">
+				<input type="hidden" name="parkingId" value="${param.parkingId}"/>
+
             <div class="row">
               <div class="col-md-6">
               
-                <!-- /.form-group -->
+                
                  <div class="form-group">
-                  <label>Title</label>
-             <select name="parkingId" name="vehicleId" name="parkingSlotId" name="userId" class="form-control select2"  style="width: 100%;">
-			  <option>Select Title</option>
-			    <c:forEach items="${allparkings}" var="s">
-                   <option value="${s.parkingId}">${s.title }</option>
+                  <label>RegistrationNum</label>
+               <select name="vehicleId"   class="form-control select2"  style="width: 100%;">
+			   <option>Select RegistrationNum</option>
+			     <c:forEach items="${allvehicles}" var="s">
+                   <option value="${s.vehicleId}">${s.registrationNum }</option>
 			   </c:forEach>
-             </select>
+             </select> 
              </div>
-               <!-- /.form-group -->
-                <div class="form-group">
-                  <label>User</label>
-                  <select name="userId" class="form-control select2"  style="width: 100%;">
-			     <option>Select User</option>
-			     <c:forEach items="${allusers}" var="s">
-
-					<option value="${s.userId}">${s.firstName }</option>
-			    </c:forEach>
-			    </select> 
-                </div>
-                <!-- /.form-group -->
-                <div class="form-group">
+                 <div class="form-group">
                   <label>Date</label>
                    <input type="date" name="date" class="form-control select2"  style="width: 100%;">
                <!-- /.form-group -->
                </div>
-                <div class="form-group">
+                 <!-- /.form-group -->
+                   <div class="form-group">
                   <label>StartTime</label>
                    <input type="datetime-local" name="startTime" class="form-control select2"  style="width: 100%;">
                    <!-- /.form-group -->
@@ -489,30 +401,15 @@
                    <input type="datetime-local" name="endTime" class="form-control select2"  style="width: 100%;">
                 <!-- /.form-group -->
               </div>
-              </div>
-            </div>  
-              <!-- /.col -->
+               
+            </div> 
+             <!-- /.col -->
               <div class="col-md-6">
-                 <!-- /.form-group -->
-                 <div class="form-group">
-                  <label>Floor</label>
-                 <select name="parkingSlotId" name="userId" class="form-control select2"  style="width: 100%;">
-			     <option>Select Floor</option>
-			     <c:forEach items="${allparkingslot}" var="s">
-                   <option value="${s.parkingSlotId}">${s.floor }</option>
-			   </c:forEach>
-               </select>
-               </div>
+               <!-- /.form-group -->
+              
+              </div>
                 <!-- /.form-group --> 
-                <div class="form-group">
-                  <label>RegistrationNum</label>
-               <select name="vehicleId" name="parkingSlotId" name="userId" class="form-control select2"  style="width: 100%;">
-			   <option>Select RegistrationNum</option>
-			     <c:forEach items="${allvehicles}" var="s">
-                   <option value="${s.vehicleId}">${s.registrationNum }</option>
-			   </c:forEach>
-             </select> 
-             </div>
+               
              <!-- /.form-group -->
                 <div class="form-group">
                   <label>AmountPaid</label>

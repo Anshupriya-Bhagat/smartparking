@@ -32,7 +32,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="admindashboard" class="nav-link">Home</a>
+        <a href="home" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -178,7 +178,7 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">${user.firstName}</a>
@@ -197,66 +197,25 @@
         </div>
       </div>
 
-      <!-- Sidebar Menu -->
+      
  <!-- Sidebar Menu -->
       <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-sign-in-alt"></i>
-              <p>
-                Pages
-                <i class="right fas fa-angle-left"></i>
-              </p>
+            <li class="nav-item ">
+            <a href="admindashboard" class="nav-link ">
+               <i class="fas fa-tachometer-alt"></i> 
+                <p>
+                Home
+                </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="signup" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>SignUp</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="login" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Login</p>
-                </a>
-              </li>
-              </ul>
-          </li>    
-               
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-users"></i>
-              
-              <p>
-                Users
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listuser" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List users</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="signup" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add user</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
+            </li>
           
            <li class="nav-item ">
             <a href="#" class="nav-link ">
-            <i class="fas fa-warehouse"></i>
+            <i class="fas fa-parking"></i>
               <p>
                 Parking
                 <i class="right fas fa-angle-left"></i>
@@ -269,39 +228,10 @@
                   <p>List parking</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="parking" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add parking</p>
-                </a>
-              </li>
+              
               </ul>
           </li>
-          
-          
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-square-parking"></i>
-              <p>
-                ParkingSlot
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listparkingslot" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List parkingSlot</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="parkingslot" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add parkingSlot</p>
-                </a>
-              </li>
-              </ul>
-          </li>
+         
           
           
            <li class="nav-item ">
@@ -328,7 +258,6 @@
               </ul>
           </li>
           
-          
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
               <i class="fas fa-truck-moving"></i>
@@ -353,7 +282,30 @@
               </ul>
           </li>
           
-          
+         
+           <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>
+                Location
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="listlocation" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List location</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="location" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add location</p>
+                </a>
+              </li>
+              </ul>
+          </li>
           
            <li class="nav-item ">
             <a href="#" class="nav-link ">
@@ -380,32 +332,14 @@
           </li>
           
           
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-map-marker-alt"></i>
-              
-              <p>
-                Location
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listlocation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List location</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="location" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add location</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-          
+         <li class="nav-item ">
+            <a href="login" class="nav-link " style="background-color:red">
+                <i class="fas fa-power-off"></i> 
+                 <p>Logout</p>
+              </a>
+            </li>
+          </ul>
+          </nav>
           <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
@@ -426,7 +360,7 @@
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="AdminDashboard">Home</a></li>
+              <li class="breadcrumb-item"><a href="home">Home</a></li>
               <li class="breadcrumb-item active">List of vehicles</li>
             </ol>
           </div>
@@ -445,29 +379,112 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body" style="min-height:702.33px">
+               <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>VehicleId</th>
+                    <th>RegistrationNum</th>
+                    <th>VehicleType</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <c:forEach items="${allvehicle}" var="m">
+                  <tr>
+                  <td>${m[0]}</td>
+                  <td>${m[1]}</td>
+                  <td>${m[3]}</td>
+                  <td><a href="viewvehicle?vehicleId=${m[0] }"><i class="fas fa-eye"></i>
+                      </a>|<a href="deletevehicle?vehicleId=${m[0] }"><i class="fas fa-trash-alt"></i></a>|
+                      <a href="editvehicle?vehicleId=${m[0] }"><i class="fas fa-edit"></i>
+                      </a></td>
+                  </tr> 
+                  </c:forEach>  
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                    <th>VehicleId</th>
+                    <th>RegistrationNum</th>
+                    <th>VehicleType</th>
+                    <th>Action</th> 
+                  </tr>
+                  </tfoot>
+                  
+                </table>
+              
+              
+              
+              
+              
+              
+              <%--  <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                     <th>VehicleId</th>
+                       <th>RegistrationNum</th>
+                       <th>VehicleType</th>
+                    <th>Action</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <c:forEach items="${allvehicle}" var="m">
+                  <tr>
+                    <td>${m[0]}</td>
+                       <td>${m[1]}</td>	
+                       <td>${m[3]}</td>
+                    <td><a href="viewvehicle?vehicleId=${m[0]}"><i class="fas fa-eye"></i>
+                    </a>|<a href="deletevehicle?vehicleId=${m[0] }"><i class="fas fa-trash-alt"></i></a>|
+                    <a href="editvehicle?vehicleId=${m[0] }"><i class="fas fa-edit"></i></a></td>
+                  </tr> 
+                  </c:forEach>  
+                   <c:forEach items="${allvehicle}" var="m">
+                  <tr>
+                  <td>${m[0]}</td>
+                  <td>${m[1]}</td>
+                  <td>${m[3]}</td>
+                   <tr>
+                    <td> ${allvehicle[0][0] }</td>
+                    <td> ${allvehicle[0][1] }</td>
+                    <td> ${allvehicle[0][3] }</td>
+                    <td><a href="viewvehicle?vehicleId=${m[0]}"><i class="fas fa-eye"></i>
+                    </a>|<a href="deletevehicle?vehicleId=${m[0] }"><i class="fas fa-trash-alt"></i></a>|
+                    <a href="editvehicle?vehicleId=${m[0] }"><i class="fas fa-edit"></i></a></td>
+                  </tr>
+                  </c:forEach> 
+                  
+
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                     <th>VehicleId</th>
+                       <th>RegistrationNum</th>
+                       <th>VehicleType</th>
+                       
+                    <th>Action</th> 
+                  </tr>
+                  </tfoot>
+                  
+                </table> --%>
+              
+              <%-- 
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                      <tr>
-                       <th>VehicleId</th>
-                       <th>RegistrationNum</th>
-                       <th>VehicleType</th>
-                       <th>Action</th>
+                       
                     </tr>
                   </thead>
                   <tbody>
                   <c:forEach items="${allvehicle}" var="m">
                      <tr>
-                       <td>${m[0]}</td>
-                       <td>${m[1]}</td>	
-                       <td>${m[3]}</td>
+                       
                        <td><a href="viewvehicle?vehicleId=${m[0] }"><i class="fas fa-eye"></i>
                       </a>|<a href="deletevehicle?vehicleId=${m[0] }"><i class="fas fa-trash-alt"></i></a>|
-                      <a><i class="fas fa-edit"></i>
+                      <a href="editvehicle?vehicleId=${m[0] }"><i class="fas fa-edit"></i>
                       </a></td>
                    </tr>
                 </c:forEach>
                 </tbody>
-               </table>
+               </table> --%>
               </div>
               <!-- /.card-body -->
             </div>

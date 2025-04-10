@@ -27,8 +27,6 @@ public class VehicleEntity {
 	public void setUserId(Integer userId) {
 		this.userId = userId;
 	}
-	
-	
 	public String getRegistrationNum() {
 		return registrationNum;
 	}
@@ -42,6 +40,5 @@ public class VehicleEntity {
 		this.vehicleType = vehicleType;
 	}
 	
-
 	
 }

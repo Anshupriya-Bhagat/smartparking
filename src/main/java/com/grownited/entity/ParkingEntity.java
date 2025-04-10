@@ -1,5 +1,7 @@
 package com.grownited.entity;
 
+
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -15,6 +17,7 @@ public class ParkingEntity {
 	private String title;
 	private String address;
 	private Integer userId;
+	private Integer locationId;
 	private Integer totalCapacityTwoWheeler;
 	private Integer totalCapacityFourWheeler;
 	private String otherInformation;
@@ -49,6 +52,13 @@ public class ParkingEntity {
 	}
 	public void setUserId(Integer userId) {
 		this.userId = userId;
+	}
+	
+	public Integer getLocationId() {
+		return locationId;
+	}
+	public void setLocationId(Integer locationId) {
+		this.locationId = locationId;
 	}
 	public Integer getTotalCapacityTwoWheeler() {
 		return totalCapacityTwoWheeler;
@@ -107,6 +117,7 @@ public class ParkingEntity {
 	public void setParkingType(String parkingType) {
 		this.parkingType = parkingType;
 	}
+	
 
 	
 

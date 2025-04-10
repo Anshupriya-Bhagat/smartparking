@@ -2,29 +2,29 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
+    
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin | Dashboard </title>
+  <title>View Vehicle</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
-  <!-- Font Awesome Icons -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- IonIcons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../../plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="../../plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  <link rel="stylesheet" href="/webjars/font-awesome/css/all.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
 </head>
-
-
-
-
-
-<!-- Navbar -->
+<body class="hold-transition sidebar-mini">
+<div class="wrapper">
+  <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
@@ -32,7 +32,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="admindashboard" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -73,7 +73,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <img src="../../dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Brad Diesel
@@ -89,7 +89,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="../../dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   John Pierce
@@ -105,7 +105,7 @@
           <a href="#" class="dropdown-item">
             <!-- Message Start -->
             <div class="media">
-              <img src="dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <img src="../../dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
               <div class="media-body">
                 <h3 class="dropdown-item-title">
                   Nora Silvester
@@ -162,12 +162,10 @@
   </nav>
   <!-- /.navbar -->
 
-
-
-
-
-
-<!-- Main Sidebar Container -->
+  
+  
+  
+  <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="index3.html" class="brand-link">
@@ -180,10 +178,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">${user.firstName }</a>
+          <a href="#" class="d-block">${user.firstName}</a>
         </div>
       </div>
 
@@ -206,34 +204,18 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                
-           <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-               <i class="fas fa-sign-in-alt"></i>
-              <p>
-                Pages
-                <i class="right fas fa-angle-left"></i>
-              </p>
+             <li class="nav-item ">
+            <a href="admindashboard" class="nav-link ">
+               <i class="fas fa-tachometer-alt"></i> 
+                <p>
+                Dashboard
+                </p>
             </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="signup" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>SignUp</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="login" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Login</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-              
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-             <i class="fas fa-users"></i>
+            </li>
+               
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-users"></i>
               <p>
                 Users
                 <i class="right fas fa-angle-left"></i>
@@ -241,23 +223,16 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="listuser" class="nav-link">
+                <a href="adminlistuser" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List users</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add user</p>
                 </a>
               </li>
               </ul>
           </li>
           
-          
-           <li class="nav-item">
-            <a href="#" class="nav-link">
+           <li class="nav-item ">
+            <a href="#" class="nav-link ">
               <i class="fas fa-parking"></i>
               <p>
                 Parking
@@ -266,23 +241,17 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="listparking" class="nav-link">
+                <a href="adminlistparking" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List parking</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="parking" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add parking</p>
-                </a>
-              </li>
+             
               </ul>
           </li>
           
-          
-           <li class="nav-item">
-            <a href="#" class="nav-link">
+           <li class="nav-item ">
+            <a href="#" class="nav-link ">
               <i class="fas fa-calendar-check"></i>
               <p>
                 Reservation
@@ -291,73 +260,59 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="listreservation" class="nav-link">
+                <a href="adminlistreservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List reservation</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="reservation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add reservation</p>
-                </a>
-              </li>
+             
               </ul>
           </li>
           
-          
-          
-           <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fas fa-warehouse"></i>
-              <p>
-                ParkingSlot
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listparkingslot" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List parkingSlot</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="parkingslot" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add parkingSlot</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-          
-          <li class="nav-item">
-            <a href="#" class="nav-link">
+         <li class="nav-item menu-open">
+            <a href="#" class="nav-link  active">
               <i class="fas fa-truck-moving"></i>
               <p>
-                Vehicle
+               Vehicle
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="listvehicle" class="nav-link">
+                <a href="adminlistlocation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List Vehicle</p>
                 </a>
               </li>
+              
+              </ul>
+          </li>
+          
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>
+                Location
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="vehicle" class="nav-link">
+                <a href="adminlistlocation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add Vehicle</p>
+                  <p>List location</p>
+                </a>
+              </li>
+                <li class="nav-item">
+                <a href="adminaddlocation" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Location</p>
                 </a>
               </li>
               </ul>
           </li>
           
-          
-          <li class="nav-item ">
+           <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="fas fa-city"></i>
                <p>
@@ -367,13 +322,13 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="listcity" class="nav-link">
+                <a href="adminlistcity" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List City</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="newcity" class="nav-link">
+                 <li class="nav-item">
+                <a href="adminaddcity" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Add City</p>
                 </a>
@@ -382,56 +337,15 @@
           </li>
           
           
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-city"></i>
-               <p>
-                State
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="liststate" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List State</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="newstate" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add State</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-          
-          
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="fas fa-map-marker-alt"></i>
-              <p>
-                Location
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listlocation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List location</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="location" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add location</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
+      
+          <li class="nav-item ">
+            <a href="login" class="nav-link " style="background-color:red">
+                <i class="fas fa-power-off"></i> 
+                 <p>Logout</p>
+              </a>
+            </li>
+         </ul>
+         </nav> 
           
           <!-- /.sidebar-menu -->
     </div>
@@ -439,67 +353,94 @@
   </aside>
   
   
-   <!-- Content Wrapper. Contains page content -->
-    <div class="content-wrapper" style="min-height:902.55px">
+  
+  
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
+    <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
-          </div><!-- /.col -->
+            <h1 class="card-title">Vehicle DataTable</h1>
+          </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="Home">Home</a></li>
-              <li class="breadcrumb-item active">Dashboard</li>
+              <li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
+              <li class="breadcrumb-item active">List of vehicles</li>
             </ol>
-          </div><!-- /.col -->
-        </div><!-- /.row -->
+          </div>
+        </div>
       </div><!-- /.container-fluid -->
-    </div>
-     
-     
- 
-    <!-- /.content-header -->
-   </div> 
+    </section>
 
-   <!-- Main content -->
-    
-
-
-	
- 
+    <!-- Main content -->
+    <section class="content" >
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body" style="min-height:702.33px">
+                <table id="example2" class="table table-bordered table-hover">
+                  <thead>
+                     <tr>
+                       <th>VehicleId</th>
+                       <th>RegistrationNum</th>
+                       <th>VehicleType</th>
+                       <th>FirstName</th>
+                       <th>LastName</th>
+                       <th>ContactNum</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                  <c:forEach items="${vehicle}" var="m">
+                     <tr>
+                       <td> ${vehicle[0][0]}</td>
+                       <td> ${vehicle[0][1] }</td>
+                       <td> ${vehicle[0][3]}</td>
+                       <td> ${vehicle[0][4]}</td>
+                       <td> ${vehicle[0][5]}</td>
+                        <td> ${vehicle[0][7]}</td>
+                   </tr>
+                </c:forEach>
+                </tbody>
+               </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+            </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
   
-
-  <!-- Main Footer -->
+  
+  
   <footer class="main-footer">
-    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong>
-    All rights reserved.
-    <div class="float-right d-none d-sm-inline-block">
+    <div class="float-right d-none d-sm-block">
       <b>Version</b> 3.1.0
     </div>
+    <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
   </footer>
 
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
 <!-- ./wrapper -->
-
-<!-- REQUIRED SCRIPTS -->
-
-<!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- AdminLTE -->
-<script src="dist/js/adminlte.js"></script>
-
-<!-- OPTIONAL SCRIPTS -->
-<script src="plugins/chart.js/Chart.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard3.js"></script>
-
-
-
 
 <!-- jQuery -->
 <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -540,11 +481,5 @@
     });
   });
 </script>
-
-
-
-
 </body>
 </html>
-  
-  
