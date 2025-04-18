@@ -59,7 +59,7 @@ public class StateController {
 		
 		Optional<StateEntity>op=repoState.findById(stateID);
 		
-		if(op.isEmpty()) {
+		if(!op.isPresent()) {
 			return"redirect:/liststate";
 		}else {
 			model.addAttribute("state", op.get());

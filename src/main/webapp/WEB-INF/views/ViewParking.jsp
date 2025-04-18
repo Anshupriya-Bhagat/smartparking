@@ -205,8 +205,8 @@
                with font-awesome or any other icon font library -->
                
                 <li class="nav-item ">
-            <a href="admindashboard" class="nav-link ">
-                <i class="fas fa-tachometer-alt"></i>
+            <a href="home" class="nav-link ">
+                <i class="fa fa-home"></i>
               <p>
               Home
                 </p>
@@ -280,25 +280,6 @@
               </ul>
           </li>
           
-           
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-map-marker-alt"></i>
-              <p>
-                Location
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listlocation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List location</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
          
           
           <li class="nav-item ">
@@ -365,11 +346,14 @@
                  <th>OtherInformation</th>
                  <th>Active</th>
                  <th>HourlyChargeForTwoWheeler</th>
-                 <th>hourlyChargeForFourWheeler</th>
+                 <th>HourlyChargeForFourWheeler</th>
                  <th>Longitude</th>
                  <th>Latitude</th>
                  <th>ParkingType</th>
+                 <th>FirstName</th>
+                 <th>LastName</th>
                  <th>LocationName</th>
+                 <th>Status</th>
                 </tr>
                  </thead>
                  <tbody>
@@ -387,6 +371,9 @@
                   <td>${m[11]}</td>
                  <td>${m[10]}</td>
                  <td>${m[4]}</td>
+                 <td>${m[20]}</td>
+                 <td>${m[21]}</td>
+                 <td>${m[23]}</td>
                  <td>${m[14]}</td>
              </tr>
            </c:forEach>

@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>User Dashboard </title>
+  <title>Home page </title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -18,6 +18,8 @@
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 
@@ -178,14 +180,14 @@
     <!-- Sidebar -->
     <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
-      <%-- <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
           <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">${user.firstName}</a>
+          <a href="edituser?userId=${user.userId}" class="d-block">${user.firstName}</a>
         </div>
-      </div> --%>
+      </div>
 
       <!-- SidebarSearch Form -->
       <div class="form-inline">
@@ -208,8 +210,8 @@
         
              <li class="nav-item menu-open">
             <a href="home" class="nav-link active ">
-               <i class="fas fa-tachometer-alt"></i> 
-                <p>
+             <i class="fa fa-home"></i>
+              <p>
                 Home
                 </p>
             </a>
@@ -217,7 +219,7 @@
           
            <li class="nav-item ">
             <a href="#" class="nav-link ">
-            <i class="fas fa-parking"></i>
+            <i class="fas fa-map-marker-alt"></i>
               <p>
                  Select Location
                 <i class="right fas fa-angle-left"></i>
@@ -249,12 +251,6 @@
                   <p>List reservation</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="reservation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add reservation</p>
-                </a>
-              </li>
               </ul>
           </li>
           
@@ -282,39 +278,30 @@
               </ul>
           </li>
           
-          
-           <li class="nav-item ">
+        
+        <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="fas fa-city"></i>
-               <p>
-                City
+              <i class="fas fa-file-alt"></i>
+              <p>
+                Report
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listcity" class="nav-link">
+               <li class="nav-item">
+                <a href="reportreservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List City</p>
+                  <p>Reservation Report</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="newcity" class="nav-link">
+               <li class="nav-item">
+                <a href="reportvehicle" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add City</p>
+                  <p>Vehicle Report</p>
                 </a>
               </li>
               </ul>
           </li>
-        
-          
-        
-          <li class="nav-item ">
-            <a href="login" class="nav-link " style="background-color:red">
-                <i class="fas fa-power-off"></i> 
-                 <p>Logout</p>
-              </a>
-            </li>
          </ul>
          </nav>
         <!-- /.sidebar-menu -->
@@ -342,54 +329,94 @@
         
         <!-- Main content -->
     <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
+      
         <div class="row">
-          <div class="col-md-3">
-
-            <!-- Profile Image -->
-            <div class="card card-primary card-outline">
-              <div class="card-body box-profile">
-                <div class="text-center">
-                  <img class="profile-user-img img-fluid img-circle"
-                       src="${user.profilePicPath }"
-                       alt="User profile picture">
-                </div>
-
-                <h3 class="profile-username text-center">${user.firstName}</h3>
-
-                <p class="text-muted text-center">User</p>
-
-                <ul class="list-group list-group-unbordered mb-3">
-                  <li class="list-group-item">
-                    <b>Registered Vehicles</b> <a class="float-right">1,322</a>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Total Registration</b> <a class="float-right">543</a>
-                  </li>
-                  <li class="list-group-item">
-                    <b>Friends</b> <a class="float-right">13,287</a>
-                  </li>
-                </ul>
-                
-                <a href="edituser" class="btn btn-primary">Edit Profile</a>
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>${totalReservations }</h3>
+                <p>Total Reservation</p>
               </div>
-             
+              <div class="icon">
+               <i class="fas fa-calendar-check"></i>
+              </div>
+             </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>${totalVehicles}</h3>
+                <p>Total Vehicle</p>
+              </div>
+              <div class="icon">
+                	<i class="fas fa-car"></i>
+                </div>
+              </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>${pastCount }</h3>
+                <p>Past reservation</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-history"></i>
+                </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <h3>${currentCount }</h3>
+                <p>Current reservation</p>
+              </div>
+              <div class="icon">
+               <i class="fas fa-calendar-day"></i>
+                </div>
+              </div>
+          </div>
+         
+        </div>
+        <!-- /.row -->
+        <section class="content">
+      <div class="container-fluid">
+         <div class="row">
+          <div class="col-md-12">
+            <!-- AREA CHART -->
+           <div class="card card-danger">
+              <div class="card-header">
+                <h3 class="card-title">Donut Chart</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+              </div>
               <!-- /.card-body -->
             </div>
-            <!-- /.card -->
-            </div>
-            </div>
-            </div>
-            </section>
-       
-        <!-- /.row -->
-      </div><!-- /.container-fluid -->
+      <!-- /.container-fluid -->
     </div>
-     
     <!-- /.content-header -->
    </div> 
-
+   </div>
+   </section>
+   </div>
+   </div>
+   </div>
+   
    
    
  
@@ -407,20 +434,101 @@
 <!-- ./wrapper -->
 
 <!-- REQUIRED SCRIPTS -->
-
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- Bootstrap -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE -->
 <script src="dist/js/adminlte.js"></script>
-
+<!-- ChartJS -->
+<script src="plugins/chart.js/Chart.min.js"></script>
 <!-- OPTIONAL SCRIPTS -->
 <script src="plugins/chart.js/Chart.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard3.js"></script>
+
+
+
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- DataTables  & Plugins -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+<script src="../../plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+<script src="../../plugins/jszip/jszip.min.js"></script>
+<script src="../../plugins/pdfmake/pdfmake.min.js"></script>
+<script src="../../plugins/pdfmake/vfs_fonts.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.print.min.js"></script>
+<script src="../../plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
+
+
+<!-- Page specific script -->
+<script>
+  $(function () {
+    $("#example1").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+  });
+  
+//-------------
+    //- DONUT CHART -
+  //-------------
+  // Get context with jQuery - using jQuery's .get() method.
+  var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+  var donutData        = {
+    labels: [
+        'totalVehicles',
+        'totalReservations',
+        'pastCount',
+        'currentConut',
+       
+    ],
+    datasets: [
+      {
+        data: [${totalVehicles},${totalReservations},${pastCount},${currentCount}],
+        backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+      }
+    ]
+  }
+  var donutOptions     = {
+    maintainAspectRatio : false,
+    responsive : true,
+  }
+  //Create pie or douhnut chart
+  // You can switch between pie and douhnut using the method below.
+  new Chart(donutChartCanvas, {
+    type: 'doughnut',
+    data: donutData,
+    options: donutOptions
+  })
+
+   
+        
+
+</script>
 </body>
 </html>
   

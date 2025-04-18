@@ -9,7 +9,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Edit reservation</title>
+  <title>Admin Edit parking</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -181,7 +181,7 @@
           <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="edituser?userId=${user.userId}" class="d-block">${user.firstName}</a>
+          <a href="adminedit?userId=${user.userId}" class="d-block">${user.firstName}</a>
         </div>
       </div>
 
@@ -204,20 +204,69 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                
+               
              <li class="nav-item ">
-            <a href="home" class="nav-link ">
-                 <i class="fa fa-home"></i>
+            <a href="admindashboard" class="nav-link ">
+                <i class="fas fa-tachometer-alt"></i>
               <p>
-                Home
+                Dashboard
                 </p>
             </a>
             </li>
                
-        
-       <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-             <i class="fas fa-calendar-check"></i>
-             <p>
+           <li class="nav-item ">
+            <a href="#" class="nav-link ">
+               <i class="fas fa-sign-in-alt"></i>
+              <p>
+                Pages
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="signup" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                   <p>SignUp</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="login" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                   <p>Login</p>
+                </a>
+              </li>
+              </ul>
+          </li>    
+               
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-users"></i>
+               <p>
+                Users
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="listuser" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List users</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="signup" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add user</p>
+                </a>
+              </li>
+              </ul>
+          </li>
+         
+          
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-calendar-check"></i>
+              <p>
                 Reservation
                 <i class="right fas fa-angle-left"></i>
               </p>
@@ -237,10 +286,83 @@
               </li>
               </ul>
           </li>
-         
+          
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+              <i class="fas fa-parking"></i>
+              <p>
+                Parking
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="listparking" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List parking</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="parking" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add parking</p>
+                </a>
+              </li>
+              </ul>
+          </li>
           
           
            <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-city"></i>
+               <p>
+                City
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="listcity" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List City</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="newcity" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add City</p>
+                </a>
+              </li>
+              </ul>
+          </li>
+          
+          
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>
+                Location
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="listlocation" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List location</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="location" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add location</p>
+                </a>
+              </li>
+              </ul>
+          </li>
+          
+          
+          <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="fas fa-truck-moving"></i>
               <p>
@@ -250,7 +372,7 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="listvehicle" class="nav-link">
+                <a href="listlocation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List Vehicle</p>
                 </a>
@@ -264,33 +386,12 @@
               </ul>
           </li>
           
-             
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-file-alt"></i>
-              <p>
-                Report
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-               <li class="nav-item">
-                <a href="reportreservation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Reservation Report</p>
-                </a>
-              </li>
-               <li class="nav-item">
-                <a href="reportvehicle" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Vehicle Report</p>
-                </a>
-              </li>
+          
               </ul>
           </li>
+        </ul>
+      </nav>    
           
-          </ul>
-          </nav>
           
           <!-- /.sidebar-menu -->
     </div>
@@ -302,18 +403,18 @@
   
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="width:auto">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="card-title"> Reservation DataTable</h1>
+            <h1 class="card-title">Parking DataTable</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
-              <li class="breadcrumb-item active">List of reservation</li>
+              <li class="breadcrumb-item active">List of Parking</li>
             </ol>
           </div>
         </div>
@@ -322,7 +423,7 @@
 
     <!-- Main content -->
     <section class="content" >
-      <div class="container-fluid" >
+      <div class="container-fluid">
         <div class="row">
           <div class="col-12">
             <div class="card">
@@ -330,16 +431,48 @@
                 
               </div>
               <!-- /.card-header -->
-              <div class="card-body" style="min-height:702.33px">
-                <form action="updatereservation" method="post">
-                  <label>Date:</label> <input type="text" name="date" value="${reservation.date }"><br><br>
-                  <label>StartTime:</label> <input type="text" name="startTime" value="${reservation.startTime }"><br><br>
-                  <label>EndTime:</label> <input type="text" name="endTime" value="${reservation.endTime }"><br><br>
-                  <label>AmountPaid:</label> <input type="text" name="amountPaid" value="${reservation.amountPaid }"><br><br>
-                  <input type="hidden"  name="reservationId" value="${reservation.reservationId }"><br><br>
-                  <input type="submit" class="btn btn-primary" value="update reservation">
-               </form>
-              </div>
+              <div class="card-body" style="min-height:502.33px">
+              <form action="updateparking" method="post">
+    <label>Title:</label>
+    <input type="text" name="title" value="${parking.title }"><br><br>
+
+    <label>Address:</label>
+    <input type="text" name="address" value="${parking.address }"><br><br>
+
+    <label>OtherInformation:</label>
+    <input type="text" name="otherInformation" value="${parking.otherInformation }"><br><br>
+
+    <label>Total Two-Wheeler Capacity:</label>
+    <input type="number" name="totalCapacityTwoWheeler" value="${parking.totalCapacityTwoWheeler }"><br><br>
+
+    <label>Total Four-Wheeler Capacity:</label>
+    <input type="number" name="totalCapacityFourWheeler" value="${parking.totalCapacityFourWheeler }"><br><br>
+
+    <label>Status:</label>
+    <input type="text" name="status" value="${parking.status }" readonly><br><br>
+
+    <input type="hidden" name="parkingId" value="${parking.parkingId }"><br>
+
+    <input type="submit" class="btn btn-primary" value="Update Parking">
+</form>
+</div>
+    
+              
+              
+              
+              
+              
+               
+              <%--   <form action="updateparking" method="post">
+                    <label>Title:</label> <input type="text" name="title" value="${parking.title }"><br><br>
+                    <label>Address:</label> <input type="text" name="address" value="${parking.address }"><br><br>
+                    <label>OtherInformation:</label> <input type="text" name="otherInformation" value="${parking.otherInformation }"><br><br>
+                    <label>Status:</label> <input type="text" name="status" value="${parking.status }"><br><br>
+                    
+                    <input type="hidden" name="parkingId" value="${parking.parkingId }"><br>
+                    <input type="submit" class="btn btn-primary" value="update parking">
+              </form> --%>
+              
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
@@ -412,9 +545,3 @@
 </script>
 </body>
 </html>
-
-
-
-
-
-

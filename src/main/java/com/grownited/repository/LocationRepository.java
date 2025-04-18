@@ -20,10 +20,12 @@ public interface LocationRepository extends JpaRepository<LocationEntity, Intege
 	List<Object[]> getAll();
 
 	
-
-
-	@Query(value = "SELECT * FROM location WHERE city_id = :cityId", nativeQuery = true)
+   @Query(value = "SELECT * FROM location WHERE city_id = :cityId", nativeQuery = true)
 	List<LocationEntity> findByCityId( Integer cityId);
+   
+   @Query("SELECT COUNT(l) FROM LocationEntity l")
+   long countTotalLocations();
+
 
 	
 

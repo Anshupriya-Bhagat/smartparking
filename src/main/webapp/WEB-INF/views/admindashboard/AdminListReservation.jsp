@@ -180,7 +180,7 @@
           <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">${user.firstName}</a>
+          <a href="adminedit?userId=${user.userId}" class="d-block">${user.firstName}</a>
         </div>
       </div>
 
@@ -336,13 +336,6 @@
               </ul>
           </li>
           
-              <li class="nav-item ">
-            <a href="login" class="nav-link " style="background-color:red">
-                <i class="fas fa-power-off"></i> 
-                 <p>Logout</p>
-              </a>
-            </li>
-          
           </ul>
           </nav>
           
@@ -391,7 +384,7 @@
                     <th>Date</th>
                     <th>StartTime</th>
                     <th>EndTime</th>
-                    <th>Address</th>
+                    
                     <th>PaymentStatus</th>
                     <th>AmountPaid</th>
                     <th>Action</th>
@@ -403,12 +396,10 @@
                    <td>${m[7]}</td>
                      <td>${m[9]}</td>	
                      <td>${m[8]}</td>
-                     <td>${m[19]}</td>
+                     
                      <td>${m[3]}</td>
                      <td>${m[1]}</td>
-                    <td><a href="adminviewreservation?reservationId=${m[0] }"><i class="fas fa-eye"></i>
-                    </a>|<a href="deletereservation?reservationId=${m[0] }"><i class="fas fa-trash-alt"></i></a>|
-                    <a href="editreservation?reservationId=${m[0] }"><i class="fas fa-edit"></i></a></td>
+                    <td><a href="adminviewreservation?reservationId=${m[0] }"><i class="fas fa-eye"></i></a>
                   </tr> 
                   </c:forEach>  
                   </tbody>
@@ -417,7 +408,7 @@
                    <th>Date</th>
                     <th>StartTime</th>
                     <th>EndTime</th>
-                    <th>Address</th>
+                    
                     <th>PaymentStatus</th>
                     <th>AmountPaid</th>
                     <th>Action</th> 

@@ -49,25 +49,25 @@ public class VehicleController {
 		return ("redirect:/listvehicle");
 	}
 	
-	@GetMapping("listvehicle")
-	public String listvehicle(Model model) {
-		List<Object[]> allvehicle = repovehicle.getAll();
-        model.addAttribute("allvehicle",allvehicle );
-		return("ListVehicle");
-	}
-	
 //	@GetMapping("listvehicle")
-//	public String listvehicle(HttpSession session, Model model) {
-//	    UserEntity user = (UserEntity) session.getAttribute("user");
-//if (user == null) {
-//	        return "redirect:/login";  
-//	    }
-//        
-//	    List<Object[]> allvehicle = repovehicle.getAllByUserId(user.getUserId());
-//	    model.addAttribute("allvehicle", allvehicle);
-//
-//	    return "ListVehicle";
+//	public String listvehicle(Model model) {
+//		List<Object[]> allvehicle = repovehicle.getAll();
+//        model.addAttribute("allvehicle",allvehicle );
+//		return("ListVehicle");
 //	}
+	
+	@GetMapping("listvehicle")
+	public String listvehicle(HttpSession session, Model model) {
+	    UserEntity user = (UserEntity) session.getAttribute("user");
+        if (user == null) {
+	        return "redirect:/login";  
+	    }
+        
+	    List<Object[]> allvehicle = repovehicle.getAllByUserId(user.getUserId());
+	    model.addAttribute("allvehicle", allvehicle);
+
+	    return "ListVehicle";
+	}
 //	
 	@GetMapping("viewvehicle")
 	public String viewvehicle(Integer vehicleId, Model model) {
@@ -86,7 +86,7 @@ public class VehicleController {
 	@GetMapping("editvehicle")
 	public String editVehicle(Integer vehicleId,Model model) {
 		Optional<VehicleEntity> op = repovehicle.findById(vehicleId);
-		if (op.isEmpty()) {
+		if (!op.isPresent()) {
 			return "redirect:/listvehicle";
 		} else {
 			model.addAttribute("vehicle",op.get());

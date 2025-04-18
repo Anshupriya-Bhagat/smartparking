@@ -3,16 +3,20 @@ package com.grownited.controller.admin;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
+import org.hibernate.dialect.identity.DB2390IdentityColumnSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.grownited.Service.DateUtil;
 import com.grownited.entity.ParkingEntity;
 import com.grownited.entity.ReservationEntity;
 import com.grownited.entity.UserEntity;
+import com.grownited.entity.VehicleEntity;
 import com.grownited.repository.CityRepository;
 import com.grownited.repository.LocationRepository;
 import com.grownited.repository.ParkingRepository;
@@ -20,6 +24,8 @@ import com.grownited.repository.ReservationRepository;
 import com.grownited.repository.StateRepository;
 import com.grownited.repository.UserRepository;
 import com.grownited.repository.VehicleRepository;
+
+import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class AdminController {
@@ -70,12 +76,7 @@ public class AdminController {
     	Long totalreservations=reporeservation.count();
     	model.addAttribute("totalreservations", totalreservations);
     	
-    	
-
-    	
-
-    	
-    	return "admindashboard/AdminDashboard";
+          return "admindashboard/AdminDashboard";
     	}
     
 
@@ -86,17 +87,59 @@ public class AdminController {
 		return "admindashboard/AdminListUser";
 	}
 	
-	@GetMapping("adminviewusers")
-	public String adminviewusers(Integer userId,Model model) {
-		List<Object[]>op=repouser.getByuserId(userId);
-		model.addAttribute("user", op);
-		return"admindashboard/AdminViewUsers";
+	@GetMapping("/adminviewuser")
+	public String adminviewuser(Integer userId, Model model) {
+		
+		System.out.println("id ===> " + userId);
+		
+		List<Object[]> op = repouser.getByuserId(userId);
+		
+		if(op.isEmpty()) {
+			//Data not found
+		}else {
+		 
+			model.addAttribute("user", op);
+		}
+		
+		return "admindashboard/AdminViewUser";
 	}
 	
-	@GetMapping("admindeleteusers")
+	@GetMapping("admindeleteuser")
 	public String admindeleteuser(Integer userId) {
 		repouser.deleteById(userId);
 		return"redirect:/adminlistuser";
+	}
+	
+	
+
+	@GetMapping("adminedituser")
+	public String adminedituser(Integer userId,Model model) {
+		Optional<UserEntity> op = repouser.findById(userId);
+		if (!op.isPresent()) {
+			return "redirect:/adminlistuser";
+		} else {
+			model.addAttribute("userList",op.get());
+			return "admindashboard/AdminEditUser";
+
+		}
+	}
+	
+	@PostMapping("adminupdateuser")
+	public String adminedituser(UserEntity user) {
+		
+		System.out.println(user.getUserId());
+
+		Optional<UserEntity> op = repouser.findById(user.getUserId());
+		
+		if(op.isPresent())
+		{
+			UserEntity dbuser = op.get(); 
+			dbuser.setRole(user.getRole());
+			 
+			
+			repouser.save(dbuser);
+		}
+		return "redirect:/adminlistuser";
 	}
 	
 
@@ -145,41 +188,39 @@ public class AdminController {
     	return"admindashboard/AdminListVehicle";
     }
 //    
-//    @GetMapping("adminviewvehicle")
-//	public String adminviewvehicle(Integer vehicleId, Model model) {
-//		List<Object[]> op = repovehicle.getByVehicleId(vehicleId);
-//		model.addAttribute("vehicle", op);
-//		return"admindashboard/AdminViewVehicle";
-//	}
-    
-//    @GetMapping("adminlistlocation")
-//    public String adminlistlocation(Model model){
-//  	 List<Object[]> alllocation = repolocation.getAll();
-//       model.addAttribute("alllocation",alllocation );
-//  	return"admindashboard/AdminListLocation";
-// }
-//    
-//    @GetMapping("admindeletelocation")
-//	public String deletelocation(Integer locationId) {
-//		repolocation.deleteById(locationId);
-//		return"redirect:/adminlistlocation";
-//	}
-    
-//    @GetMapping("adminlistlocation")
-//    public String adminlistlocation(Model model){
-//    	 List<Object[]> alllocation = repolocation.getAll();
-//         model.addAttribute("alllocation",alllocation );
-//    	return"admindashboard/AdminListLocation";
-//    }
+    @GetMapping("adminviewvehicle")
+	public String adminviewvehicle(Integer vehicleId, Model model) {
+		List<Object[]> op = repovehicle.getByVehicleId(vehicleId);
+		model.addAttribute("vehicle", op);
+		return"admindashboard/AdminViewVehicle";
+	}
+
+
+    @GetMapping("/adminedit")
+	public String editUser(HttpSession session, Model model) {
+		UserEntity user = (UserEntity) session.getAttribute("user");
+	    model.addAttribute("user", user);
+	    return "admindashboard/AdminEdit";
+	}
 	
-//    @GetMapping("adminlistcity")
-//    public String adminlistcity(){
-//    	return"admindashboard/AdminListcity";
-//    }
+	@PostMapping("adminupdate")
+	public String adminupdate(UserEntity user) {
+		System.out.println(user.getUserId());
+		
+		Optional<UserEntity>op=repouser.findById(user.getUserId());
+		
+		if(op.isPresent()) {
+			UserEntity dbuser=op.get();
+			dbuser.setFirstName(user.getFirstName());
+			dbuser.setLastName(user.getLastName());
+			dbuser.setContactNum(user.getContactNum());
+			repouser.save(dbuser);
+		}return"redirect:/adminlistuser";
+	}
     
-//    @GetMapping("adminliststate")
-//    public String adminliststate(){
-//    	return"admindashboard/AdminListState";
-//    }
+ 
+    
+    
+
 	
 }

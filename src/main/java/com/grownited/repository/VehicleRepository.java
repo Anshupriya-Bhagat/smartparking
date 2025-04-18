@@ -18,7 +18,15 @@ public interface VehicleRepository extends JpaRepository<VehicleEntity, Integer>
 //
 //	List<VehicleEntity> findByUserId(Integer userId);
 //
-//	List<Object[]> getAllByUserId(@org.springframework.data.repository.query.Param("userId") Integer userId);
+	@Query(value = "select v.*,u.first_name,u.last_name,u.email,u.contact_num from vehicle v, users u where v.user_id  = u.user_id and v.user_id=:userId",nativeQuery = true)
+
+	List<Object[]> getAllByUserId(@org.springframework.data.repository.query.Param("userId") Integer userId);
+
+	int countByUserId(int userId);
+
+
+//	List<VehicleEntity> findByUserId(@org.springframework.data.repository.query.Param("userId") Integer userId);
+
 	
 
 	

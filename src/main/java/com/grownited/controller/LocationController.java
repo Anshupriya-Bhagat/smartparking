@@ -53,7 +53,7 @@ public class LocationController {
 	@GetMapping("editlocation")
 	public String editlocation(Integer locationId,Model model,LocationEntity location) {
 		Optional<LocationEntity> op = repolocation.findById(locationId);
-		if (op.isEmpty()) {
+		if (!op.isPresent()) {
 			return "redirect:/listlocation";
 		} else {
 			//System.out.println(location.getLocationId());

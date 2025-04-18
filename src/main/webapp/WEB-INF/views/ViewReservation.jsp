@@ -205,33 +205,32 @@
                with font-awesome or any other icon font library -->
                
                 <li class="nav-item ">
-            <a href="admindashboard" class="nav-link ">
-                <i class="fas fa-tachometer-alt"></i>
+            <a href="home" class="nav-link ">
+               <i class="fa fa-home"></i>
+               
               <p>
                Home
                 </p>
             </a>
             </li>
-          
-          
-           <li class="nav-item ">
+        
+          <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="fas fa-parking"></i>
-               <p>
-                Parking
+            <i class="fas fa-map-marker-alt"></i>
+              <p>
+                 Select Location
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="listparking" class="nav-link">
+                <a href="selectlocation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List parking</p>
+                  <p>Select Location</p>
                 </a>
               </li>
-              </ul>
+             </ul>
           </li>
-          
           
            <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
@@ -248,12 +247,7 @@
                   <p>List reservation</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="reservation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add reservation</p>
-                </a>
-              </li>
+             
               </ul>
           </li>
           
@@ -280,51 +274,27 @@
               </li>
               </ul>
           </li>
+
           
-             
-          <li class="nav-item ">
+            <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="fas fa-map-marker-alt"></i>
+              <i class="fas fa-file-alt"></i>
               <p>
-                Location
+                Report
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listlocation" class="nav-link">
+               <li class="nav-item">
+                <a href="reportreservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List location</p>
+                  <p>Reservation Report</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="location" class="nav-link">
+               <li class="nav-item">
+                <a href="reportvehicle" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add location</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-city"></i>
-               <p>
-                City
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listcity" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List City</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="newcity" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add City</p>
+                  <p>Vehicle Report</p>
                 </a>
               </li>
               </ul>
@@ -398,17 +368,17 @@
                   <tbody>
                   <c:forEach items="${reservation}" var="m">
                      <tr>
-                     <td>${reservation[0][17]}</td>
-                     <td>${reservation[0][18]}</td>
+                     <td>${reservation[0][15]}</td>
+                     <td>${reservation[0][16]}</td>
                     <td>${reservation[0][7]}</td>
                     <td>${reservation[0][9]}</td>
                     <td>${reservation[0][8]}</td>
                     <td>${reservation[0][3]}</td>
                     <td>${reservation[0][1]}</td>
                     <td>${reservation[0][4]}</td>
-                    <td>${reservation[0][14]}</td>
-                    <td>${reservation[0][15]}</td>
-                    <td>${reservation[0][16]}</td> 
+                    <td>${reservation[0][12]}</td>
+                    <td>${reservation[0][13]}</td>
+                    <td>${reservation[0][14]}</td> 
                   
                     </tr>
                      </c:forEach>

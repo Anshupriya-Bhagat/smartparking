@@ -180,7 +180,7 @@
           <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">${user.firstName }</a>
+          <a href="adminedit?userId=${user.userId}" class="d-block">${user.firstName }</a>
         </div>
       </div>
 
@@ -205,7 +205,7 @@
                
                
                 <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+            <a href="admindashboard" class="nav-link active">
                <i class="fas fa-tachometer-alt"></i> 
                 <p>
                 Dashboard
@@ -229,12 +229,7 @@
                   <p>List users</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="signup" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add user</p>
-                </a>
-              </li>
+              
               </ul>
           </li>
           
@@ -348,7 +343,7 @@
           
             <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="fas fa-users"></i>
+              <i class="fas fa-file-alt"></i>
               <p>
                 Report
                 <i class="right fas fa-angle-left"></i>
@@ -383,12 +378,6 @@
           </li>
           
           
-           <li class="nav-item ">
-            <a href="login" class="nav-link " style="background-color:red">
-                <i class="fas fa-power-off"></i> 
-                 <p>Logout</p>
-              </a>
-            </li>
             </ul>
             </nav>
           
@@ -456,20 +445,7 @@
                 </div>
               </div>
           </div>
-          <!-- ./col -->
-         <%--  <div class="col-lg-3 col-6">
-            <!-- small card -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>${lastMonthReservationCount}</h3>
-                <p>Previous month reservation</p>
-              </div>
-              <div class="icon">
-                <i class="fas fa-chart-pie"></i>
-              </div>
-              </div>
-          </div> --%>
-          <!-- ./col -->
+         
         </div>
         <!-- /.row -->
         <section class="content">

@@ -181,7 +181,7 @@
           <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">${user.firstName}</a>
+          <a href="edituser?userId=${user.userId}" class="d-block">${user.firstName}</a>
         </div>
       </div>
 
@@ -205,31 +205,30 @@
                with font-awesome or any other icon font library -->
                
             <li class="nav-item ">
-            <a href="admindashboard" class="nav-link ">
-               <i class="fas fa-tachometer-alt"></i> 
+            <a href="home" class="nav-link ">
+               <i class="fa fa-home"></i>
                 <p>
                 Home
                 </p>
             </a>
             </li>
-          
-           <li class="nav-item ">
+            
+              <li class="nav-item ">
             <a href="#" class="nav-link ">
-            <i class="fas fa-parking"></i>
+            <i class="fas fa-map-marker-alt"></i>
               <p>
-                Parking
+                 Select Location
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="listparking" class="nav-link">
+                <a href="selectlocation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List parking</p>
+                  <p>Select Location</p>
                 </a>
               </li>
-              
-              </ul>
+             </ul>
           </li>
          
           
@@ -282,62 +281,30 @@
               </ul>
           </li>
           
-         
+          
            <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="fas fa-map-marker-alt"></i>
+              <i class="fas fa-file-alt"></i>
               <p>
-                Location
+                Report
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listlocation" class="nav-link">
+               <li class="nav-item">
+                <a href="reportreservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List location</p>
+                  <p>Reservation Report</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="location" class="nav-link">
+               <li class="nav-item">
+                <a href="reportvehicle" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add location</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-city"></i>
-               <p>
-                City
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listcity" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List City</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="newcity" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add City</p>
+                  <p>Vehicle Report</p>
                 </a>
               </li>
               </ul>
           </li>
-          
-          
-         <li class="nav-item ">
-            <a href="login" class="nav-link " style="background-color:red">
-                <i class="fas fa-power-off"></i> 
-                 <p>Logout</p>
-              </a>
-            </li>
           </ul>
           </nav>
           <!-- /.sidebar-menu -->

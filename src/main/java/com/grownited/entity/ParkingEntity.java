@@ -27,6 +27,16 @@ public class ParkingEntity {
 	private Float longitude;
 	private Float latitude;
 	private String parkingType;
+	private Integer totalSlots;
+	private Integer totalAvailableSlots;
+	private Integer totalBookedSlots;
+	private String status="VACANT";
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
 	public Integer getParkingId() {
 		return parkingId;
 	}
@@ -86,7 +96,6 @@ public class ParkingEntity {
 		this.active = active;
 	}
 	
-	
 	public Integer getHourlyChargeForTwoWheeler() {
 		return hourlyChargeForTwoWheeler;
 	}
@@ -118,6 +127,31 @@ public class ParkingEntity {
 		this.parkingType = parkingType;
 	}
 	
+	
+	public Integer getTotalSlots() {
+		return totalSlots;
+	}
+	public void setTotalSlots(Integer totalSlots) {
+		this.totalSlots = totalSlots;
+	}
+	
+	public Integer getTotalAvailableSlots() {
+		return totalAvailableSlots;
+	}
+	public void setTotalAvailableSlots(Integer totalAvailableSlots) {
+		this.totalAvailableSlots = totalAvailableSlots;
+	}
+	public Integer getTotalBookedSlots() {
+		return totalBookedSlots;
+	}
+	public void setTotalBookedSlots(Integer totalBookedSlots) {
+		this.totalBookedSlots = totalBookedSlots;
+	}
+	public boolean isFull(int usedTwoWheeler, int usedFourWheeler) {
+	    return (this.totalCapacityTwoWheeler != null && this.totalCapacityFourWheeler != null)
+	            && this.totalCapacityTwoWheeler.equals(usedTwoWheeler)
+	            && this.totalCapacityFourWheeler.equals(usedFourWheeler);
+	}
 
 	
 

@@ -181,7 +181,7 @@
           <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">${user.firstName}</a>
+          <a href="owneredit?userId=${user.userId}" class="d-block">${user.firstName}</a>
         </div>
       </div>
 
@@ -204,7 +204,14 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                
-         
+         <li class="nav-item ">
+            <a href="parkingowner" class="nav-link ">
+               <i class="fas fa-user-tie"></i> 
+                <p>
+                parkingowner
+                </p>
+            </a>
+            </li>
           
           <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
@@ -229,13 +236,6 @@
               </li>
               </ul>
           </li>
-          
-          <li class="nav-item ">
-            <a href="login" class="nav-link " style="background-color:red">
-                <i class="fas fa-power-off"></i> 
-                 <p>Logout</p>
-              </a>
-            </li>
           </ul>
       </nav>    
           <!-- /.sidebar-menu -->
@@ -314,14 +314,11 @@
                   </select> 
                 </div>
                 <!-- /.form-group -->
-                <div class="form-group">
-                  <label>TotalcapacitytwoWheeler</label>
-                  <select class="form-control select2"  name="totalCapacityTwoWheeler" style="width: 100%;">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                  </select>
+                 <div class="form-group">
+                <label>TotalCapacityTwoWheeler</label>
+                <input type="text" name="totalCapacityTwoWheeler" class="form-control select2" style="width: 100%;">
                 </div>
+             
                 <!-- /.form-group -->
                
                 <!-- /.form-group -->
@@ -330,12 +327,8 @@
               <div class="col-md-6">
                 <!-- /.form-group -->
                 <div class="form-group">
-                  <label>TotalcapacityfourWheeler</label>
-                  <select class="form-control select2" name="totalCapacityFourWheeler"  style="width: 100%;">
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
-                  </select>
+                <label>TotalCapacityFourWheeler</label>
+                <input type="text" name="totalCapacityFourWheeler" class="form-control select2" style="width: 100%;">
                 </div>
                  <!-- /.form-group -->
                 <div class="form-group">

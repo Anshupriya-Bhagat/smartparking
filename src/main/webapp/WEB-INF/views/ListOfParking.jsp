@@ -206,7 +206,7 @@
                
             <li class="nav-item ">
             <a href="home" class="nav-link ">
-               <i class="fas fa-tachometer-alt"></i> 
+                <i class="fa fa-home"></i> 
                 <p>
                 Home
                 </p>

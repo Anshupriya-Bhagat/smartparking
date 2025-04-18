@@ -181,7 +181,7 @@
           <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">${user.firstName}</a>
+          <a href="adminedit?userId=${user.userId}" class="d-block">${user.firstName}</a>
         </div>
       </div>
 
@@ -296,13 +296,51 @@
             
               </ul>
           </li>
+           <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-map-marker-alt"></i>
+              <p>
+                Location
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="adminlistlocation" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List location</p>
+                </a>
+              </li>
+                <li class="nav-item">
+                <a href="adminaddlocation" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Location</p>
+                </a>
+              </li>
+              </ul>
+          </li>
           
-          <li class="nav-item ">
-            <a href="login" class="nav-link " style="background-color:red">
-                <i class="fas fa-power-off"></i> 
-                 <p>Logout</p>
-              </a>
-            </li>
+           <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-city"></i>
+               <p>
+                City
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="adminlistcity" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List City</p>
+                </a>
+              </li>
+                 <li class="nav-item">
+                <a href="adminaddcity" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add City</p>
+                </a>
+              </li>  
           </ul>
           </nav>
           
@@ -350,6 +388,7 @@
                   <tr>
                     
                     <th>ReservationId</th>
+                     <th>Title</th>
                     <th>Date</th>
                     <th>StartTime</th>
                     <th>EndTime</th>
@@ -359,25 +398,24 @@
                     <th>FirstName</th>
                      <th>LastName</th>
                      <th>ContactNum</th>
-                     <th>RegistrationNum</th>
-                     <th>Title</th>
+                    <th>Address</th>
                   </tr>
                   </thead>
                   <tbody>
                   <c:forEach items="${reservation}" var="m">
                      <tr>
                      <td>${m[0]}</td>
+                     <td>${m[15]}</td> 
                     <td>${m[7]}</td>
                     <td>${m[9]}</td>
                     <td>${m[8]}</td>
                     <td>${m[3]}</td>
                     <td>${m[1]}</td>
                     <td>${m[4]}</td>
-                    <td>${m[10]}</td>
-                    <td>${m[11]}</td>
                     <td>${m[12]}</td>
                     <td>${m[13]}</td>
-                    <td>${m[14]}</td> 
+                    <td>${m[14]}</td>
+                    <td>${m[16]}</td>
                     
                     </tr>
                      </c:forEach>

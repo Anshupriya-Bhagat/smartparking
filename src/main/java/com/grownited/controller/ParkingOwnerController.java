@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.grownited.entity.CityEntity;
@@ -16,6 +17,8 @@ import com.grownited.entity.UserEntity;
 import com.grownited.repository.CityRepository;
 import com.grownited.repository.LocationRepository;
 import com.grownited.repository.ParkingRepository;
+import com.grownited.repository.ReservationRepository;
+import com.grownited.repository.UserRepository;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -32,9 +35,26 @@ public class ParkingOwnerController {
 	
 	@Autowired
 	CityRepository repocity;
+	
+	@Autowired
+	ReservationRepository reporeservation;
+	
+	@Autowired
+	UserRepository repouser;
     
     @GetMapping("parkingowner")
-    public String parkingowner() {
+    public String parkingowner(Model model,Integer locationId) {
+    	
+    	Long totalparkings=repoparking.count();
+    	model.addAttribute("totalparkings", totalparkings);
+    	
+    	Long totalreservations=reporeservation.count();
+    	model.addAttribute("totalreservations", totalreservations);
+    	
+    	Long totalLocations = repolocation.countTotalLocations();
+        model.addAttribute("totalLocations", totalLocations);
+        
+        
     	return "parkingOwner/ParkingOwner"; 
     }
     
@@ -68,12 +88,12 @@ public class ParkingOwnerController {
     	return"parkingOwner/ListParkingOwner";
     }
     
-//    @GetMapping("ownerviewparking")
-//	public String ownerviewparking(Integer parkingId,Model model) {
-//		List<Object[]> op = repoparking.getByParkingId(parkingId);
-//		model.addAttribute("parking", op);
-//		return"parkingOwner/OwnerViewParking";
-//	}
+    @GetMapping("ownerviewparking")
+	public String ownerviewparking(Integer parkingId,Model model) {
+		List<Object[]> op = repoparking.getByParkingId(parkingId);
+		model.addAttribute("parking", op);
+		return"parkingOwner/OwnerViewParking";
+	}
 	
 	@GetMapping("deleteparking")
 	public String deleteuser(Integer parkingId) {
@@ -81,7 +101,7 @@ public class ParkingOwnerController {
 		return "redirect:/listparkingowner";
 	}
 	
-	@GetMapping("editparking")
+	@GetMapping("ownereditparking")
 	public String ownereditparking(Integer parkingId,Model model) {
 		Optional<ParkingEntity>op=repoparking.findById(parkingId);
 		if(op.isEmpty()) {
@@ -98,9 +118,34 @@ public class ParkingOwnerController {
 		if(op.isPresent()) {
 			ParkingEntity dbparking=op.get();
 			dbparking.setAddress(parking.getAddress());
+			dbparking.setTotalCapacityFourWheeler(parking.getTotalCapacityFourWheeler());
+			dbparking.setTotalCapacityTwoWheeler(parking.getTotalCapacityTwoWheeler());
 			repoparking.save(dbparking);
 			
 		}return"redirect:/listparkingowner";
 	}
+	
+	@GetMapping("/owneredit")
+	public String editUser(HttpSession session, Model model) {
+		UserEntity user = (UserEntity) session.getAttribute("user");
+	    model.addAttribute("user", user);
+	    return "parkingOwner/OwnerEdit";
+	}
+	
+	@PostMapping("ownerupdate")
+	public String updateuser(UserEntity user) {
+		System.out.println(user.getUserId());
+		
+		Optional<UserEntity>op=repouser.findById(user.getUserId());
+		
+		if(op.isPresent()) {
+			UserEntity dbuser=op.get();
+			dbuser.setFirstName(user.getFirstName());
+			dbuser.setLastName(user.getLastName());
+			dbuser.setContactNum(user.getContactNum());
+			repouser.save(dbuser);
+		}return"redirect:/adminlistuser";
+	}
+	
 }
 

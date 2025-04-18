@@ -288,8 +288,7 @@
               
               </ul>
           </li>
-          
-          <li class="nav-item ">
+ <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="fas fa-map-marker-alt"></i>
               <p>
@@ -304,9 +303,36 @@
                   <p>List location</p>
                 </a>
               </li>
-             
+                <li class="nav-item">
+                <a href="adminaddlocation" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add Location</p>
+                </a>
+              </li>
               </ul>
           </li>
+          
+           <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-city"></i>
+               <p>
+                City
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="adminlistcity" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>List City</p>
+                </a>
+              </li>
+                 <li class="nav-item">
+                <a href="adminaddcity" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Add City</p>
+                </a>
+              </li>
           
            <li class="nav-item ">
             <a href="#" class="nav-link ">
@@ -331,14 +357,6 @@
               </li>
               </ul>
           </li>
-          
-         
-          <li class="nav-item ">
-            <a href="login" class="nav-link " style="background-color:red">
-                <i class="fas fa-power-off"></i> 
-                 <p>Logout</p>
-              </a>
-            </li>
         </ul>
       </nav>    
           
@@ -415,7 +433,7 @@
                   <td>${m[11]}</td>
                  <td>${m[10]}</td>
                  <td>${m[4]}</td>
-                 <td>${m[14]}</td>
+                 <td>${m[23]}</td>
                </tr>
            </c:forEach>
                  </tbody>

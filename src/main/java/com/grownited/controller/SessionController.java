@@ -141,7 +141,7 @@ public class SessionController {
 	public String sendotp(Model model, String email) {
 		Optional<UserEntity> op = repouser.findByEmail(email);
 		
-		if(op.isEmpty()) {
+		if(!op.isPresent()) {
 			model.addAttribute("error","Email not found");
 			return("ForgotPassword");
 		}
@@ -200,28 +200,6 @@ public class SessionController {
 	@GetMapping("logout")
 	public String logout() {
 		return "redirect:/login";
-	}
-	
-	/*
-	 * @GetMapping("edituser") public String edituser(Integer userId ,Model model) {
-	 * Optional<UserEntity>op=repouser.findById(userId); if(op.isEmpty()) {
-	 * return"redirect:/listuser"; }else { model.addAttribute("user", op.get());
-	 * return"EditUser"; }
-	 * 
-	 * }
-	 */
-	
-	@PostMapping("updateuser")
-	public String updateuser(UserEntity user) {
-		System.out.println(user.getUserId());
-		
-		Optional<UserEntity>op=repouser.findById(user.getUserId());
-		
-		if(op.isPresent()) {
-			UserEntity dbuser=op.get();
-			dbuser.setFirstName(user.getFirstName());
-			repouser.save(dbuser);
-		}return"redirect:/listuser";
 	}
 	
 	

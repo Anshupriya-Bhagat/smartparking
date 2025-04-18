@@ -8,7 +8,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Admin | Dashboard </title>
+  <title>ParkingOwner Dashboard </title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -183,7 +183,7 @@
           <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">${user.firstName }</a>
+          <a href="owneredit?userId=${user.userId}" class="d-block">${user.firstName }</a>
         </div>
       </div>
 
@@ -207,18 +207,18 @@
                with font-awesome or any other icon font library -->
                
                
-                <li class="nav-item ">
-            <a href="#" class="nav-link ">
-               <i class="fas fa-tachometer-alt"></i> 
+                <li class="nav-item menu-open">
+            <a href="parkingowner" class="nav-link active">
+               <i class="fas fa-user-tie"></i> 
                 <p>
-                Dashboard
+                parkingowner
                 </p>
             </a>
             </li>
                
        
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
+          <li class="nav-item ">
+            <a href="#" class="nav-link ">
               <i class="fas fa-parking"></i>
               <p>
                 Parking
@@ -240,13 +240,6 @@
               </li>
               </ul>
           </li>
-          
-          <li class="nav-item ">
-            <a href="login" class="nav-link " style="background-color:red">
-                <i class="fas fa-power-off"></i> 
-                 <p>Logout</p>
-              </a>
-            </li>
             </ul>
             </nav>
           
@@ -274,12 +267,79 @@
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
     </div>
-     
-     
- 
+     <!-- /.content-header -->
+     <div class="row">
+          <div class="col-lg-4 col-6">
+            <!-- small card -->
+            <div class="small-box bg-info">
+              <div class="inner">
+                <h3>${totalparkings }</h3>
+                <p>Total Parkings</p>
+              </div>
+              <div class="icon">
+               <i class="fas fa-user-plus"></i>
+              </div>
+             </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-4 col-6">
+            <!-- small card -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <h3>${totalreservations}</h3>
+                <p>Total Reservations</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-parking"></i>
+                </div>
+              </div>
+          </div>
+          <!-- ./col -->
+          <div class="col-lg-4 col-6">
+            <!-- small card -->
+            <div class="small-box bg-warning">
+              <div class="inner">
+                <h3>${totalLocations }</h3>
+                <p>Total Locations</p>
+              </div>
+              <div class="icon">
+                <i class="fas fa-calendar-check"></i>
+                </div>
+              </div>
+          </div>
+         
+        </div>
+        <section class="content">
+      <div class="container-fluid">
+         <div class="row">
+          <div class="col-md-12">
+            <!-- AREA CHART -->
+           <div class="card card-danger">
+              <div class="card-header">
+                <h3 class="card-title">Donut Chart</h3>
+
+                <div class="card-tools">
+                  <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                  </button>
+                  <button type="button" class="btn btn-tool" data-card-widget="remove">
+                    <i class="fas fa-times"></i>
+                  </button>
+                </div>
+              </div>
+              <div class="card-body">
+                <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+              </div>
+              <!-- /.card-body -->
+            </div>
+      <!-- /.container-fluid -->
+    </div>
     <!-- /.content-header -->
    </div> 
-
+   </div>
+   </section>
+   </div>
+   
    <!-- Main content -->
     
 
@@ -356,6 +416,37 @@
       "responsive": true,
     });
   });
+  
+  
+//- DONUT CHART -
+  //-------------
+  // Get context with jQuery - using jQuery's .get() method.
+  var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+  var donutData        = {
+    labels: [
+        'parking',
+        'reservation',
+        'location'
+       
+    ],
+    datasets: [
+      {
+        data: [${totalparkings},${totalreservations},${totalLocations}],
+        backgroundColor : ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+      }
+    ]
+  }
+  var donutOptions     = {
+    maintainAspectRatio : false,
+    responsive : true,
+  }
+  //Create pie or douhnut chart
+  // You can switch between pie and douhnut using the method below.
+  new Chart(donutChartCanvas, {
+    type: 'doughnut',
+    data: donutData,
+    options: donutOptions
+  })
 </script>
 
 

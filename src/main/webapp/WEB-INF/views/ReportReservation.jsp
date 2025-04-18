@@ -6,7 +6,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>State DataTables</title>
+  <title>Reservation DataTables</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -29,7 +29,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="admindashboard" class="nav-link">Home</a>
+        <a href="home" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -201,76 +201,15 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                
-           <li class="nav-item ">
-            <a href="admindashboard" class="nav-link ">
-                <i class="fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
+                     <li class="nav-item ">
+            <a href="home" class="nav-link ">
+               <i class="fas fa-tachometer-alt"></i> 
+                <p>
+                Home
                 </p>
             </a>
-            </li>    
+            </li>   
                
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-users"></i>
-              <p>
-                Users
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listuser" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List users</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="signup" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add user</p>
-                </a>
-              </li>
-              </ul>
-          </li>
- 
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-truck-moving"></i>
-              <p>
-               Vehicle
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="adminlistlocation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List Vehicle</p>
-                </a>
-              </li>
-              
-              </ul>
-          </li>
-          
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-calendar-check"></i>
-              <p>
-                Reservation
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="adminlistreservation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List reservation</p>
-                </a>
-              </li>
-             
-              </ul>
-          </li>
           
           <li class="nav-item ">
             <a href="#" class="nav-link ">
@@ -282,93 +221,88 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="adminlistparking" class="nav-link">
+                <a href="listparking" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List parking</p>
                 </a>
               </li>
-             
               </ul>
           </li>
           
-         <li class="nav-item ">
+          
+           <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="fas fa-map-marker-alt"></i>
+              <i class="fas fa-calendar-check"></i>
               <p>
-                Location
+                Reservation
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="adminlistlocation" class="nav-link">
+                <a href="listreservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List location</p>
+                  <p>List reservation</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="adminaddlocation" class="nav-link">
+                <a href="reservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add location</p>
+                  <p>Add reservation</p>
                 </a>
               </li>
               </ul>
           </li>
           
-           <li class="nav-item ">
+          
+          <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="fas fa-city"></i>
-               <p>
-                City
+              <i class="fas fa-truck-moving"></i>
+              <p>
+               Vehicle
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="adminlistcity" class="nav-link">
+                <a href="listlocation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List City</p>
+                  <p>List Vehicle</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="adminnewcity" class="nav-link">
+                <a href="vehicle" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add City</p>
+                  <p>Add Vehicle</p>
                 </a>
               </li>
               </ul>
           </li>
           
-           <li class="nav-item menu-open">
+          
+          <li class="nav-item menu-open">
             <a href="#" class="nav-link active">
-             <i class="fas fa-landmark"></i>
-             <p>
-                State
+              <i class="fas fa-file-alt"></i>
+              <p>
+                Report
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="adminliststate" class="nav-link">
+               <li class="nav-item">
+                <a href="reportreservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List State</p>
+                  <p>Reservation Report</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="adminastate" class="nav-link">
+               <li class="nav-item">
+                <a href="reportvehicle" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add State</p>
+                  <p>Vehicle Report</p>
                 </a>
               </li>
               </ul>
           </li>
-          
-           <li class="nav-item ">
-            <a href="login" class="nav-link " style="background-color:red">
-                <i class="fas fa-power-off"></i> 
-                 <p>Logout</p>
-              </a>
-            </li>
           
         </ul>
       </nav>    
@@ -385,12 +319,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="card-title">State DataTable</h1>
+            <h1 class="card-title">Reservation DataTable</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
-              <li class="breadcrumb-item active">List of State</li>
+              <li class="breadcrumb-item"><a href="home">Home</a></li>
+              <li class="breadcrumb-item active">List of reservation</li>
             </ol>
           </div>
         </div>
@@ -403,24 +337,43 @@
       <div class="container-fluid">
         <!-- SELECT2 EXAMPLE -->
         <div class="card card-default">
-         
+          
           <!-- /.card-header -->
           <div class="card-body">
-          <form action="adminsavestate" method="post">
-            <div class="row">
-              <div class="col-md-6">
-                <!-- /.form-group -->
-                <div class="form-group">
-                <label>State</label>
-                <input type="text" name="stateName" class="form-control select2">
-                </div>
-                <!-- /.form-group -->
-                 <input type=submit  class="btn btn-primary" value=adminsavestate>
-              </div>
-            </div>
-            <!-- /.row -->
-
-            </form>
+           <table id="example1" class="table table-bordered table-striped">
+                  <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>StartTime</th>
+                    <th>EndTime</th>
+                   <th>PaymentStatus</th>
+                    <th>AmountPaid</th>
+                    
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <c:forEach items="${reservationList}" var="m">
+                  <tr>
+                    <td>${m[7]}</td>
+                     <td>${m[9]}</td>	
+                     <td>${m[8]}</td>
+                     <td>${m[3]}</td>
+                     <td>${m[1]}</td>
+                  </tr> 
+                  </c:forEach>  
+                  </tbody>
+                  <tfoot>
+                  <tr>
+                   <th>Date</th>
+                    <th>StartTime</th>
+                    <th>EndTime</th>
+                    <th>PaymentStatus</th>
+                    <th>AmountPaid</th>
+                    
+                  </tr>
+                  </tfoot>
+                  
+                </table>
             <!-- /.row -->
           </div>
           

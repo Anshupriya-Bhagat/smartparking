@@ -178,7 +178,7 @@
           <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">${user.firstName}</a>
+          <a href="edituser?userId=${user.userId}" class="d-block">${user.firstName}</a>
         </div>
       </div>
 
@@ -202,8 +202,9 @@
                with font-awesome or any other icon font library -->
                
                      <li class="nav-item ">
-            <a href="#" class="nav-link ">
-               <i class="fas fa-tachometer-alt"></i> 
+            <a href="home" class="nav-link ">
+               <i class="fa fa-home"></i>
+                
                 <p>
                 Home
                 </p>
@@ -279,61 +280,6 @@
               </ul>
           </li>
           
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-map-marker-alt"></i>
-              <p>
-                Location
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listlocation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List location</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="location" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add location</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-city"></i>
-               <p>
-                City
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listcity" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List City</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="newcity" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add City</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-           <li class="nav-item ">
-            <a href="login" class="nav-link " style="background-color:red">
-                <i class="fas fa-power-off"></i> 
-                 <p>Logout</p>
-              </a>
-            </li>
-          
         </ul>
       </nav>    
           <!-- /.sidebar-menu -->
@@ -375,17 +321,16 @@
 
             <div class="row">
               <div class="col-md-6">
-              
-                
-                 <div class="form-group">
-                  <label>RegistrationNum</label>
-               <select name="vehicleId"   class="form-control select2"  style="width: 100%;">
-			   <option>Select RegistrationNum</option>
-			     <c:forEach items="${allvehicles}" var="s">
-                   <option value="${s.vehicleId}">${s.registrationNum }</option>
-			   </c:forEach>
-             </select> 
+              <div class="form-group">
+              <label> RegistrationNum</label>
+                <select name="vehicleId" class="form-control" >
+                 <option disabled selected>Select RegistrationNum</option>
+                <c:forEach var="vehicle" items="${vehicleList}">
+                    <option value="${vehicle[0]}">${vehicle[1]}</option>
+                </c:forEach>
+               </select>
              </div>
+                 
                  <div class="form-group">
                   <label>Date</label>
                    <input type="date" name="date" class="form-control select2"  style="width: 100%;">
@@ -394,11 +339,11 @@
                  <!-- /.form-group -->
                    <div class="form-group">
                   <label>StartTime</label>
-                   <input type="datetime-local" name="startTime" class="form-control select2"  style="width: 100%;">
+                   <input type="time" name="startTime" class="form-control select2"  style="width: 100%;">
                    <!-- /.form-group -->
                 <div class="form-group">
                   <label>EndTime</label>
-                   <input type="datetime-local" name="endTime" class="form-control select2"  style="width: 100%;">
+                   <input type="time" name="endTime" class="form-control select2"  style="width: 100%;">
                 <!-- /.form-group -->
               </div>
                
@@ -421,7 +366,8 @@
                 <input type="text" name="securityAmountPaid" class="form-control select2">
                 </div>
                 <!-- /.form-group -->
-                <input type=submit  class="btn btn-primary" value=savereservation>
+                
+               <a href="makepayment"><button class="btn btn-primary">Make Payment</button></a>
               </div>
               <!-- /.col -->
             </div>

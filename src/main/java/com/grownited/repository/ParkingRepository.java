@@ -1,6 +1,7 @@
 package com.grownited.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -9,7 +10,8 @@ import org.springframework.stereotype.Repository;
 
 
 import com.grownited.entity.ParkingEntity;
-import com.grownited.entity.VehicleEntity;
+
+
 
 
 @Repository
@@ -21,8 +23,45 @@ public interface ParkingRepository extends JpaRepository<ParkingEntity, Integer>
 	@Query(value="select p.*,u.first_name, u.last_name, u.contact_num,l.loction_name from parking p,users u,location l where p.user_id=u.user_id and p.location_id = l.location_id and p.parking_id =:parkingId",nativeQuery = true)
 	List<Object[]> getByParkingId(Integer parkingId);
 	
-	@Query(value = "SELECT DISTINCT * FROM parking WHERE location_id = :locationId", nativeQuery = true)
+	@Query(value = "SELECT DISTINCT * FROM parking WHERE location_id = :locationId and status = 'VACANT'", nativeQuery = true)
 	List<Object[]> findUniqueByLocation(@Param("locationId") int locationId);
+
+	Optional<ParkingEntity> findByParkingId(Integer parkingId);
+
+	
+
+
+
+
+	
+	
+
+	
 	
 
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

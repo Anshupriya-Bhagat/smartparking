@@ -18,6 +18,7 @@ import com.grownited.entity.ParkingEntity;
 import com.grownited.entity.UserEntity;
 import com.grownited.repository.LocationRepository;
 import com.grownited.repository.ParkingRepository;
+import com.grownited.repository.ReservationRepository;
 import com.grownited.repository.UserRepository;
 import com.grownited.repository.VehicleRepository;
 
@@ -37,9 +38,35 @@ public class HomeController {
 	@Autowired
 	VehicleRepository repovehicle;
 	
+	@Autowired
+	ReservationRepository reporeservation;
+	
 	@GetMapping("home")
-	public String home() {
-		
+	public String home(HttpSession session,Model model ) {
+		 UserEntity user = (UserEntity) session.getAttribute("user");
+		    if (user != null) {
+		        int userId = user.getUserId();
+		        int totalReservations = reporeservation.countByUserId(userId);
+		        model.addAttribute("totalReservations", totalReservations);
+		    }
+		    
+		    if (user != null) {
+		        int userId = user.getUserId();
+		        int totalVehicles = repovehicle.countByUserId(userId);
+		        model.addAttribute("totalVehicles", totalVehicles);
+		    }
+		    
+		    if (user != null) {
+//		        return "redirect:/login"; // redirect to login if user is not logged in
+		    	 int userId = user.getUserId();
+		    	 int pastCount = reporeservation.countPastReservations(userId);
+				    int currentCount = reporeservation.countCurrentReservations(userId);
+
+				    model.addAttribute("pastCount", pastCount);
+				    model.addAttribute("currentCount", currentCount);
+		    }
+
+		   
 		return"Home";
 	}
 	
@@ -59,8 +86,6 @@ public class HomeController {
 	@GetMapping("listofparking")
 	public String listofparking(@RequestParam("locationId") int locationId, Model model) {
 		
-//		List<Object[]> allparking = repoparking.getAll();
-//		model.addAttribute("allparking",allparking);
 		List<Object[]>allparking=repoparking.findUniqueByLocation(locationId);
 		model.addAttribute("allparking",allparking);
 		return "ListOfParking";
@@ -79,6 +104,21 @@ public class HomeController {
 		UserEntity user = (UserEntity) session.getAttribute("user");
 	    model.addAttribute("user", user);
 	    return "EditUser";
+	}
+	
+	@PostMapping("updateuser")
+	public String updateuser(UserEntity user) {
+		System.out.println(user.getUserId());
+		
+		Optional<UserEntity>op=repouser.findById(user.getUserId());
+		
+		if(op.isPresent()) {
+			UserEntity dbuser=op.get();
+			dbuser.setFirstName(user.getFirstName());
+			dbuser.setLastName(user.getLastName());
+			dbuser.setContactNum(user.getContactNum());
+			repouser.save(dbuser);
+		}return"redirect:/adminlistuser";
 	}
 
 

@@ -1,14 +1,14 @@
 package com.grownited.entity;
 
 
-import java.sql.Date;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
 import jakarta.persistence.Table;
 
 @Entity
@@ -21,15 +21,15 @@ public class ReservationEntity {
 	private Integer parkingId;
 	private Integer locationId;
 	private Integer vehicleId;
-	private Date date;
-	private String startTime;
-	private String endTime;
+	private LocalDate date;
+	private LocalTime startTime;
+	private LocalTime endTime;
 	private String paymentStatus;
 	private Integer amountPaid;
 	private Integer securityAmountPaid;
-	private Integer countReservationsFromLastMonth;
-	private Integer startDate;
-	private Integer endDate;
+	
+	
+
 	public Integer getReservationId() {
 		return reservationId;
 	}
@@ -48,7 +48,7 @@ public class ReservationEntity {
 	public void setParkingId(Integer parkingId) {
 		this.parkingId = parkingId;
 	}
-	
+//	
 	public Integer getLocationId() {
 		return locationId;
 	}
@@ -61,22 +61,24 @@ public class ReservationEntity {
 	public void setVehicleId(Integer vehicleId) {
 		this.vehicleId = vehicleId;
 	}
-	public Date getDate() {
+	
+	
+	public LocalDate getDate() {
 		return date;
 	}
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
-	public String getStartTime() {
+	public LocalTime getStartTime() {
 		return startTime;
 	}
-	public void setStartTime(String startTime) {
+	public void setStartTime(LocalTime startTime) {
 		this.startTime = startTime;
 	}
-	public String getEndTime() {
+	public LocalTime getEndTime() {
 		return endTime;
 	}
-	public void setEndTime(String endTime) {
+	public void setEndTime(LocalTime endTime) {
 		this.endTime = endTime;
 	}
 	public String getPaymentStatus() {
@@ -96,24 +98,6 @@ public class ReservationEntity {
 	}
 	public void setSecurityAmountPaid(Integer securityAmountPaid) {
 		this.securityAmountPaid = securityAmountPaid;
-	}
-	public Integer getCountReservationsFromLastMonth() {
-		return countReservationsFromLastMonth;
-	}
-	public void setCountReservationsFromLastMonth(Integer countReservationsFromLastMonth) {
-		this.countReservationsFromLastMonth = countReservationsFromLastMonth;
-	}
-	public Integer getStartDate() {
-		return startDate;
-	}
-	public void setStartDate(Integer startDate) {
-		this.startDate = startDate;
-	}
-	public Integer getEndDate() {
-		return endDate;
-	}
-	public void setEndDate(Integer endDate) {
-		this.endDate = endDate;
 	}
 	
 	

@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.grownited.entity.LocationEntity;
 import com.grownited.entity.ParkingEntity;
@@ -16,6 +18,7 @@ import com.grownited.entity.VehicleEntity;
 import com.grownited.repository.CityRepository;
 import com.grownited.repository.LocationRepository;
 import com.grownited.repository.ParkingRepository;
+import com.grownited.repository.ReservationRepository;
 import com.grownited.repository.UserRepository;
 import com.grownited.repository.VehicleRepository;
 
@@ -40,6 +43,10 @@ public class ParkingController {
 	@Autowired
 	VehicleRepository repovehicle;
 	
+	@Autowired
+	ReservationRepository reporeservation;
+	
+	
 	@GetMapping(value= {"/","parking"})
 	public String parking(Model model) {
 		
@@ -51,34 +58,7 @@ public class ParkingController {
 		 
 		return"Parking";
 	}
-	
-	
-	
-//	@GetMapping("/bookparking")
-//	public String showReservationForm(Model model) {
-//	    model.addAttribute("allparkings", repoparking.findAll());
-//	    model.addAttribute("allcity", repocity.findAll());
-//	    model.addAttribute("alllocations", repolocation.findAll());
-//	    model.addAttribute("allvehicles", repovehicle.findAll());
-//	    return "Reservation";
-//	}
 
-
-
-	
-	 
-//	
-//	@PostMapping("saveparking")
-//	public String saveparking(ParkingEntity parking, HttpSession session) {
-//		UserEntity user =(UserEntity) session.getAttribute("user");
-//		Integer userId=user.getUserId();
-//		parking.setUserId(userId);
-//		parking.setActive("Active");
-//		parking.setHourlyChargeForFourWheeler(700);
-//		parking.setHourlyChargeForTwoWheeler(500);
-//		repoparking.save(parking);
-//		return "redirect:/ListParkingOwner";
-//	}
 	
 	@GetMapping("listparking")
 	public String listparking( Long parkingId,Model model) {
@@ -88,6 +68,32 @@ public class ParkingController {
 		
 		return "ListParking";
 	}
+	
+	
+//	@GetMapping("editparking")
+//	public String editparking(Integer parkingId,Model model) {
+//		Optional<ParkingEntity>op=repoparking.findById(parkingId);
+//		if(!op.isPresent()) {
+//			return"redirect;/listparking";
+//		}else {
+//			model.addAttribute("parking", op.get());
+//			return"EditParking";
+//		}
+//	}
+//	
+//	@PostMapping("updateparking")
+//	public String updateparking(ParkingEntity parking){
+//		Optional<ParkingEntity> op = repoparking.findById(parking.getParkingId());
+//		if(op.isPresent()) {
+//			ParkingEntity dbparking=op.get();
+//			dbparking.setAddress(parking.getAddress());
+//			repoparking.save(dbparking);
+//			
+//		}return"redirect:/listparking";
+//	}
+
+ 
+
 
 
 //@GetMapping("/listparking")
@@ -119,27 +125,7 @@ public class ParkingController {
 //		return "redirect:/listparking";
 //	}
 //	
-//	@GetMapping("editparking")
-//	public String editparking(Integer parkingId,Model model) {
-//		Optional<ParkingEntity>op=repoparking.findById(parkingId);
-//		if(op.isEmpty()) {
-//			return"redirect;/listparking";
-//		}else {
-//			model.addAttribute("parking", op.get());
-//			return"EditParking";
-//		}
-//	}
-//	
-//	@PostMapping("updateparking")
-//	public String updateparking(ParkingEntity parking){
-//		Optional<ParkingEntity> op = repoparking.findById(parking.getParkingId());
-//		if(op.isPresent()) {
-//			ParkingEntity dbparking=op.get();
-//			dbparking.setAddress(parking.getAddress());
-//			repoparking.save(dbparking);
-//			
-//		}return"redirect:/listparking";
-//	}
+	
 
 	
 		

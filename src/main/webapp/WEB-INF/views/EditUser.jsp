@@ -30,7 +30,7 @@
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="admindashboard" class="nav-link">Home</a>
+        <a href="home" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="#" class="nav-link">Contact</a>
@@ -203,87 +203,59 @@
                with font-awesome or any other icon font library -->
                
             <li class="nav-item ">
-            <a href="admindashboard" class="nav-link ">
-               <i class="fas fa-tachometer-alt"></i> 
+            <a href="home" class="nav-link ">
+              <i class="fa fa-home"></i> 
                 <p>
-                Dashboard
+                Home
                 </p>
             </a>
-            </li>
-               
-            <li class="nav-item menu-open">
-            <a href="#" class="nav-link ">
-               <i class="fas fa-sign-in-alt"></i>
+            </li>  
+            
+             <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
+             <i class="fas fa-map-marker-alt"></i>
+              
               <p>
-                Pages
+                select location
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="signup" class="nav-link">
+                <a href="selectlocation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>SignUp</p>
+                  <p> select location</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="login" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Login</p>
-                </a>
-              </li>
+             
               </ul>
           </li> 
           
-          
-           <li class="nav-item ">
-            <a href="#" class="nav-link active">
-              <i class="fas fa-users"></i>
-              <p>
-                Users
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listuser" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List users</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="signup" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add user</p>
-                </a>
-              </li>
-              </ul>
-          </li>   
-               
-          
-           <li class="nav-item menu-open">
+          <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="fas fa-parking"></i>
+              <i class="fas fa-truck-moving"></i>
+              
               <p>
-                Parking
+                Vehicle
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="listparking" class="nav-link">
+                <a href="listvehicle" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List parking</p>
+                  <p>List Vehicle</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="parking" class="nav-link">
+                <a href="vehicle" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add parking</p>
+                  <p>Add Vehicle</p>
                 </a>
               </li>
               </ul>
           </li>
+          
           
           
            <li class="nav-item menu-open">
@@ -310,84 +282,32 @@
               </ul>
           </li>
           
-          <li class="nav-item ">
+           <li class="nav-item ">
             <a href="#" class="nav-link ">
-              <i class="fas fa-city"></i>
-               <p>
-                City
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listcity" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List City</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="newcity" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add City</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-          
-          <li class="nav-item menu-open">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-map-marker-alt"></i>
+              <i class="fas fa-file-alt"></i>
               <p>
-                Location
+                Report
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listlocation" class="nav-link">
+               <li class="nav-item">
+                <a href="reportreservation" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List location</p>
+                  <p>Reservation Report</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="location" class="nav-link">
+               <li class="nav-item">
+                <a href="reportvehicle" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Add location</p>
+                  <p>Vehicle Report</p>
                 </a>
               </li>
               </ul>
           </li>
           
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-             <i class="fas fa-landmark"></i>
-             <p>
-                State
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="liststate" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List State</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="newstate" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add State</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          <li class="nav-item ">
-            <a href="login" class="nav-link " style="background-color:red">
-                <i class="fas fa-power-off"></i> 
-                 <p>Logout</p>
-              </a>
-            </li>
+         
+         
           </ul>
           </nav>
           
@@ -424,27 +344,70 @@
     <section class="content" >
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
-            <div class="card">
+        
+        
+                     <!-- Profile Image -->
+            <div class="card card-primary card-outline" style="min-height: 350px; height: 350px; width:25%" class="col-6">
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  <img class="profile-user-img img-fluid img-circle"
+                       src="${user.profilePicPath }"
+                       alt="User profile picture">
+                </div>
+
+                <h3 class="profile-username text-center">${user.firstName}</h3>
+
+                <p class="text-muted text-center">User</p>
+                
+                 <a href="login"  style="background-color:red" class="btn btn-primary btn-block"><b>Logout</b></a>
+
+               
+                
+               
+              </div>
+             
+              <!-- /.card-body -->
+            </div>
+        
+        
+          <div class="col-md-9">
+            <div class="card" style="width:100%">
               <div class="card-header">
                 
               </div>
               <!-- /.card-header -->
-              <div class="card-body" style="min-height:702.33px">
+              <div class="card-body"  style="min-height: 350px; height: 350px; width:60%">
                 <form action="updateuser" method="post">
-		         <label>FirstName :</label> <input type="text" name="firstName" value="${user.firstName}" /><br> <br>
-		         <label>LastName :</label> <input type="text" name="lastName" value="${user.lastName}" /><br> <br>
-		         <label>ContactNum:</label> <input type="text" name="contactNum" value="${user.contactNum}" /><br> <br>
+                <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="firstName" class="form-control select2" value="${user.firstName}" style="width: 100%;">
+                </div>
+                 <div class="form-group">
+                <label>LastName</label>
+                <input type="text" name="lastName" class="form-control select2" value="${user.lastName}" style="width: 100%;">
+                </div>
+                 <div class="form-group">
+                <label>ContactNum</label>
+                <input type="text" name="contactNum" class="form-control select2" value="${user.contactNum}" style="width: 100%;">
+                </div>
 			     <input type="hidden" name="userId"  value="${user.userId}"/>
-		         <input type="submit" class="btn btn-primary" value="Update User" />
+		         <input type="submit" class="btn btn-primary" value="Update" />
                </form>
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
             </div>
+            
+
+        
+            
           <!-- /.col -->
         </div>
+        
+        
+        
+        
         <!-- /.row -->
       </div>
       <!-- /.container-fluid -->
@@ -511,10 +474,3 @@
 </script>
 </body>
 </html>
-
-
-
-
-
-
->

@@ -203,7 +203,7 @@
                
                      <li class="nav-item ">
             <a href="home" class="nav-link ">
-               <i class="fas fa-tachometer-alt"></i> 
+               <i class="fa fa-home"></i>
                 <p>
                 Home
                 </p>
@@ -211,8 +211,8 @@
             </li>
                
              
-               <li class="nav-item ">
-            <a href="#" class="nav-link ">
+               <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
              <i class="fas fa-map-marker-alt"></i>
               
               <p>
@@ -261,7 +261,6 @@
            <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="fas fa-calendar-check"></i>
-              
               <p>
                 Reservation
                 <i class="right fas fa-angle-left"></i>
@@ -274,71 +273,31 @@
                   <p>List reservation</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="reservation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add reservation</p>
-                </a>
-              </li>
               </ul>
           </li>
           
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-parking"></i>
-              
-              <p>
-                Parking
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listparking" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List parking</p>
-                </a>
-              </li>
-             
-              </ul>
-          </li>
-          
-         <li class="nav-item menu-open">
-            <a href="#" class="nav-link active">
-              <i class="fas fa-map-marker-alt"></i>
-              
-              <p>
-                Location
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listlocation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List location</p>
-                </a>
-              </li>
-             
-              </ul>
-          </li>
-          
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-city"></i>
-               <p>
-                City
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listcity" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List City</p>
-                </a>
-              </li>
             
+           <li class="nav-item ">
+            <a href="#" class="nav-link ">
+              <i class="fas fa-file-alt"></i>
+              <p>
+                Report
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+               <li class="nav-item">
+                <a href="reportreservation" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Reservation Report</p>
+                </a>
+              </li>
+               <li class="nav-item">
+                <a href="reportvehicle" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Vehicle Report</p>
+                </a>
+              </li>
               </ul>
           </li>
           

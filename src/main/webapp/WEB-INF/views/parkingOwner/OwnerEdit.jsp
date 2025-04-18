@@ -2,13 +2,12 @@
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-    
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>List State</title>
+  <title>Owner Edit</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -180,7 +179,7 @@
           <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">${user.firstName}</a>
+          <a href="" class="d-block">${user.firstName}</a>
         </div>
       </div>
 
@@ -204,18 +203,16 @@
                with font-awesome or any other icon font library -->
                
             <li class="nav-item ">
-            <a href="admindashboard" class="nav-link ">
-               <i class="fas fa-tachometer-alt"></i> 
-                <p>
-               Home
+            <a href="parkingowner" class="nav-link ">
+             <i class="fas fa-user-tie"></i>
+              <p>
+              parkingowner
                 </p>
             </a>
             </li>
-               
-           
-         
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
+            
+             <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
               <i class="fas fa-parking"></i>
               <p>
                 Parking
@@ -224,124 +221,26 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="listparking" class="nav-link">
+                <a href="listparkingowner" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>List parking</p>
                 </a>
               </li>
-             
-              </ul>
-          </li>
-          
-           
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-calendar-check"></i>
-              <p>
-                Reservation
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listreservation" class="nav-link">
+               <li class="nav-item">
+                <a href="owneraddparking" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>List reservation</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="reservation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add reservation</p>
-                </a>
-              </li>
-              </ul>
-            </li>
-            
-             <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-truck-moving"></i>
-              <p>
-                Vehicle
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listvehicle" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List Vehicle</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="vehicle" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add Vehicle</p>
+                  <p>Add parking</p>
                 </a>
               </li>
               </ul>
           </li>
           
-            
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-map-marker-alt"></i>
-              
-              <p>
-                Location
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listlocation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List location</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="location" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add location</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-city"></i>
-               <p>
-                City
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listcity" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List City</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="newcity" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add City</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-          
-          
-          
-           <li class="nav-item ">
-            <a href="login" class="nav-link " style="background-color:red">
-                <i class="fas fa-power-off"></i> 
-                 <p>Logout</p>
-              </a>
-            </li>
+         
+         
           </ul>
-         </nav>
+          </nav>
+          
+         
           <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
@@ -358,12 +257,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-             <h1 class="card-title">State DataTable</h1>
+            <h1 class="card-title"> Users DataTable</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
-              <li class="breadcrumb-item active">List of State</li>
+              <li class="breadcrumb-item active">List of users</li>
             </ol>
           </div>
         </div>
@@ -374,41 +273,70 @@
     <section class="content" >
       <div class="container-fluid">
         <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
+        
+        
+                     <!-- Profile Image -->
+            <div class="card card-primary card-outline" style="min-height: 350px; height: 350px; width:25%" class="col-6">
+              <div class="card-body box-profile">
+                <div class="text-center">
+                  <img class="profile-user-img img-fluid img-circle"
+                       src="${user.profilePicPath }"
+                       alt="User profile picture">
+                </div>
+
+                <h3 class="profile-username text-center">${user.firstName}</h3>
+
+                <p class="text-muted text-center">${user.role}</p>
+                
+                 <a href="login"  style="background-color:red" class="btn btn-primary btn-block"><b>Logout</b></a>
+
+               
+                
                
               </div>
+             
+              <!-- /.card-body -->
+            </div>
+        
+        
+          <div class="col-md-9">
+            <div class="card" style="width:100%">
+              <div class="card-header">
+                
+              </div>
               <!-- /.card-header -->
-              <div class="card-body" style="min-height:702.33px">
-                <table id="example2" class="table table-bordered table-hover">
-                  <thead>
-                  <tr>
-                    <th>stateId</th>
-                    <th>stateName</th>
-                    <th>Action</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                       <c:forEach items="${allstate}" var="m">
-                          <tr>
-                          <td>${m.stateID}</td>
-                          <td>${m.stateName}</td>	
-                          <td> <a href="viewstate?stateID=${m.stateID}"><i class="fas fa-eye"></i></a> | 
-                          <a href="deletestate?stateID=${m.stateID}"><i class="fas fa-trash-alt"></i></a>|
-                          <a  href="editstate?stateID=${m.stateID}"><i class="fas fa-edit"></i></a> </td>
-                         </tr>
-		              </c:forEach>
-                  </tbody>
-                 
-                </table>
+              <div class="card-body"  style="min-height: 350px; height: 350px; width:60%">
+                <form action="ownerupdate" method="post">
+                <div class="form-group">
+                <label>First Name</label>
+                <input type="text" name="firstName" class="form-control select2" value="${user.firstName}" style="width: 100%;">
+                </div>
+                 <div class="form-group">
+                <label>LastName</label>
+                <input type="text" name="lastName" class="form-control select2" value="${user.lastName}" style="width: 100%;">
+                </div>
+                 <div class="form-group">
+                <label>ContactNum</label>
+                <input type="text" name="contactNum" class="form-control select2" value="${user.contactNum}" style="width: 100%;">
+                </div>
+			     <input type="hidden" name="userId"  value="${user.userId}"/>
+		         <input type="submit" class="btn btn-primary" value="Update" />
+               </form>
               </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
             </div>
+            
+
+        
+            
           <!-- /.col -->
         </div>
+        
+        
+        
+        
         <!-- /.row -->
       </div>
       <!-- /.container-fluid -->
@@ -475,3 +403,10 @@
 </script>
 </body>
 </html>
+
+
+
+
+
+
+>

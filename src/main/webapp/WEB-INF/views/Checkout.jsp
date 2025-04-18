@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>view user</title>
+  <title>Reservation DataTables</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -166,7 +165,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-     <a href="index3.html" class="brand-link">
+    <a href="index3.html" class="brand-link">
       <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">ParkGenius</span>
     </a>
@@ -176,10 +175,10 @@
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="${user[9]}" class="img-circle elevation-2" alt="User Image">
+          <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">${user[2]}</a>
+          <a href="edituser?userId=${user.userId}" class="d-block">${user.firstName}</a>
         </div>
       </div>
 
@@ -202,39 +201,17 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
                
-                <li class="nav-item ">
-            <a href="admindashboard" class="nav-link ">
-                <i class="fas fa-tachometer-alt"></i>
-              <p>
-                Dashboard
+                     <li class="nav-item ">
+            <a href="home" class="nav-link ">
+               <i class="fa fa-home"></i>
+                
+                <p>
+                Home
                 </p>
             </a>
-            </li>
-            
-             <li class="nav-item ">
-            <a href="#" class="nav-link ">
-             <i class="fas fa-users"></i>
-             <p>
-                Users
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="adminlistuser" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List users</p>
-                </a>
-              </li>
-                 <li class="nav-item">
-                <a href="signup" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add user</p>
-                </a>
-              </li>
-              </ul>
-          </li>
+            </li>   
                
+          
           <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="fas fa-parking"></i>
@@ -254,8 +231,8 @@
           </li>
           
           
-           <li class="nav-item ">
-            <a href="#" class="nav-link ">
+           <li class="nav-item menu-open">
+            <a href="#" class="nav-link active">
               <i class="fas fa-calendar-check"></i>
               <p>
                 Reservation
@@ -278,7 +255,8 @@
               </ul>
           </li>
           
-           <li class="nav-item ">
+          
+          <li class="nav-item ">
             <a href="#" class="nav-link ">
               <i class="fas fa-truck-moving"></i>
               <p>
@@ -301,137 +279,71 @@
               </li>
               </ul>
           </li>
-          
-          <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-map-marker-alt"></i>
-              <p>
-                Location
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listlocation" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List location</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="location" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add location</p>
-                </a>
-              </li>
-              </ul>
-          </li>
+         
           
            <li class="nav-item ">
-            <a href="#" class="nav-link ">
-              <i class="fas fa-city"></i>
-               <p>
-                City
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="listcity" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>List City</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="newcity" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Add City</p>
-                </a>
-              </li>
-              </ul>
-          </li>
-         
-          <li class="nav-item ">
             <a href="login" class="nav-link " style="background-color:red">
                 <i class="fas fa-power-off"></i> 
                  <p>Logout</p>
               </a>
             </li>
-          </ul>
-          </nav>
-         
+          
+        </ul>
+      </nav>    
           <!-- /.sidebar-menu -->
     </div>
     <!-- /.sidebar -->
   </aside>
   
   
-  
-  
-
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper" style="width:auto">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="card-title"> User DataTable</h1>
+            <h1 class="card-title">Payment</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="admindashboard">Home</a></li>
-              <li class="breadcrumb-item active">View of a user</li>
+              <li class="breadcrumb-item"><a href="home">Home</a></li>
+              <li class="breadcrumb-item active">Payment</li>
             </ol>
           </div>
         </div>
       </div><!-- /.container-fluid -->
     </section>
 
-    <!-- Main content -->
-    <section class="content" >
+   
+     <!-- Main content -->
+    <section class="content">
       <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-              <div class="card-header">
-                
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body" style="min-height:702.33px">
-                <table id="example2" class="table table-bordered table-hover">
-                  <thead>
-                  <tr>
-                    <th>FirstName</th>
-                    <th>LastName</th>
-                    <th>Email</th>
-                    <th>ContactNum</th>
-                    <th>Gender</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                  <c:forEach items="${user}" var="m">
-                     <tr>
-                     <td>${m[2]}</td>
-                     <td>${m[4]}</td>	
-                     <td>${m[1]}</td>
-                     <td>${m[7]}</td>
-                     <td>${m[3]}</td>
-                     
-                     </t>
-                     </c:forEach>
-                  </tbody>
-                 
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            <!-- /.card -->
-            </div>
-          <!-- /.col -->
+        <!-- SELECT2 EXAMPLE -->
+        <div class="card card-default">
+          
+          <!-- /.card-header -->
+          <div class="card-body">
+          <div class="col-md-6">
+          <form action="pay" method="post">
+	
+	Amount : <input type="text" value="${amount}"/><Br><br> 
+	Credit Card : <input type="text" size="16" name="ccNum"/><Br><Br>  
+	ExpDate : <input type="text" name="expDate" size="4"/><br><br> 
+	
+	<input type="submit" class="btn btn-primary" value="Pay"/> 
+
+</form>
+          </div>
+          
+            <!-- /.row -->
+          </div>
+          
+          <!-- /.card-body -->
         </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
+        <!-- /.card -->
+    
+    </div>
     </section>
     <!-- /.content -->
   </div>
@@ -495,3 +407,12 @@
 </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+

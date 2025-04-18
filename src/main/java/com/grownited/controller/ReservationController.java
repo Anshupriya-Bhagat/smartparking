@@ -50,7 +50,12 @@ public class ReservationController {
 	CityRepository repocity;
 	
 	@GetMapping(value= {"/","reservation"})
-	public String reservation(Model model,Integer parkingId) {
+	public String reservation(Model model, Integer parkingId,HttpSession session) {
+		
+		UserEntity user = (UserEntity) session.getAttribute("user");
+		
+		model.addAttribute("reservation", new ReservationEntity());
+	    model.addAttribute("parkingId", parkingId);
 		
 		List<UserEntity> allusers  = repouser.findAll();
 		 model.addAttribute("allusers", allusers);
@@ -69,6 +74,9 @@ public class ReservationController {
 	    
 	    Optional<ParkingEntity> op=repoparking.findById(parkingId);
     	model.addAttribute("parking", op.get());
+    	
+    	List<Object[]> vehicleList = repovehicle.getAllByUserId(user.getUserId());    
+	    model.addAttribute("vehicleList", vehicleList);
 	   
 		return ("Reservation");
 	}
@@ -80,32 +88,27 @@ public class ReservationController {
 		Integer userId = user.getUserId();
         reservation.setUserId(userId);
 		reservation.setPaymentStatus("Completed");
+		
+		
+		
+		
 		reporeservation.save(reservation);
-		return ("redirect:/listreservation");
+		return ("Checkout");
 	}
 	
-	@GetMapping("listreservation")
-	public String listreservation(Model model) {
-		
-		List<Object[]> reservationList = reporeservation.getAll();
-		model.addAttribute("reservationList",reservationList);
-		
-		return "ListReservation";
+	@GetMapping("/listreservation")
+	public String listreservation(HttpSession session, Model model) {
+	    UserEntity user = (UserEntity) session.getAttribute("user");
+
+	    if (user == null) {
+	        return "redirect:/login";  
+	    }
+        
+	    List<Object[]> reservationList = reporeservation.getAllByUserId(user.getUserId());    
+	    model.addAttribute("reservationList", reservationList);
+
+	    return ("ListReservation");
 	}
-	
-//	@GetMapping("/listreservation")
-//	public String listreservation(HttpSession session, Model model) {
-//	    UserEntity user = (UserEntity) session.getAttribute("user");
-//
-//	    if (user == null) {
-//	        return "redirect:/login";  
-//	    }
-//        
-//	    List<Object[]> reservationList = reporeservation.getAllByUserId(user.getUserId());
-//	    model.addAttribute("reservationList", reservationList);
-//
-//	    return ("ListReservation");
-//	}
 	
 	
 	  @GetMapping("viewreservation") 
@@ -125,13 +128,14 @@ public class ReservationController {
 	@GetMapping("editreservation")
 	public String editreservation(Integer reservationId,Model model) {
 		Optional<ReservationEntity> op = reporeservation.findById(reservationId);
-		if(op.isEmpty()) {
+		if(!op.isPresent()) {
 			return"redirect:/listreservation";
 		}else {
 			model.addAttribute("reservation", op.get());
 			return"EditReservation";
 		}
 	}
+	
 	
 	@PostMapping("updatereservation")
 	public String updatereservation(ReservationEntity reservation) {
@@ -140,6 +144,8 @@ public class ReservationController {
 		if(op.isPresent()) {
 			ReservationEntity dbreservation=op.get();
 			dbreservation.setDate(reservation.getDate());
+			dbreservation.setEndTime(reservation.getEndTime());
+			dbreservation.setStartTime(reservation.getStartTime());
 			reporeservation.save(dbreservation);
 		}return"redirect:/listreservation";
 		

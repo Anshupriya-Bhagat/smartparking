@@ -181,7 +181,7 @@
           <img src="${user.profilePicPath }" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">${user.firstName}</a>
+          <a href="owneredit?userId=${user.userId}" class="d-block">${user.firstName}</a>
         </div>
       </div>
 
@@ -206,10 +206,10 @@
                
                
              <li class="nav-item ">
-            <a href="home" class="nav-link ">
-                <i class="fas fa-tachometer-alt"></i>
+            <a href="parkingowner" class="nav-link ">
+                <i class="fas fa-user-tie"></i>
               <p>
-               Home
+               parkingowner
                 </p>
             </a>
             </li>
@@ -238,14 +238,6 @@
               </li>
               </ul>
           </li>
-          
-          
-            <li class="nav-item ">
-            <a href="login" class="nav-link " style="background-color:red">
-                <i class="fas fa-power-off"></i> 
-                 <p>Logout</p>
-              </a>
-            </li>
         </ul>
       </nav>    
           
@@ -293,6 +285,8 @@
                     <label>Title:</label> <input type="text" name="title" value="${parking.title }"><br><br>
                     <label>Address:</label> <input type="text" name="address" value="${parking.address }"><br><br>
                     <label>OtherInformation:</label> <input type="text" name="otherInformation" value="${parking.otherInformation }"><br><br>
+                     <label>TotalCapacityTwoWheeler:</label> <input type="text" name="totalCapacityTwoWheeler" value="${parking.totalCapacityTwoWheeler }"><br><br>
+                   <label>TotalCapacityFourWheeler:</label> <input type="text" name="totalCapacityFourWheeler" value="${parking.totalCapacityFourWheeler }"><br><br>
                     <input type="hidden" name="parkingId" value="${parking.parkingId }"><br>
                     <input type="submit" class="btn btn-primary" value="update parking">
               </form>
